@@ -34,7 +34,7 @@ const UploadVideo = () => {
         }
     }
     
-    const updateImage = (e) => {
+    const updateVideo = (e) => {
         const file = e.target.files[0];
         setVideo(file);
     }
@@ -44,7 +44,7 @@ const UploadVideo = () => {
             <input
               type="file"
               accept="image/*"
-              onChange={updateImage}
+              onChange={updateVideo}
             />
             <button type="submit">Submit</button>
             {(videoLoading)&& <p>Loading...</p>}
