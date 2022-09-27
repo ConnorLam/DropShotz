@@ -14,6 +14,7 @@ class Video(db.Model):
     time_updated = db.Column(db.DateTime(timezone=True), onupdate=func.now())
 
     user = db.relationship('User', back_populates='videos')
+    comments = db.relationship('Comment', back_populates='video', cascade='all, delete-orphan')
 
     def to_dict(self):
         return {
