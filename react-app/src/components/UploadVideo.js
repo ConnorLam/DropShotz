@@ -17,14 +17,14 @@ const UploadVideo = () => {
         // some sort of loading message is a good idea
         setVideoLoading(true);
 
-        const res = await fetch('/api/images', {
+        const res = await fetch('/api/upload', {
             method: "POST",
             body: formData,
         });
         if (res.ok) {
             await res.json();
             setVideoLoading(false);
-            history.push("/images");
+            history.push("/");
         }
         else {
             setVideoLoading(false);
