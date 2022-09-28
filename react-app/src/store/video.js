@@ -111,6 +111,7 @@ export const deleteVidThunk = (videoId) => async dispatch => {
 
 const initialState = {}
 
+//force push to main
 const videoReducer = (state = initialState, action) => {
     let newState = {...state}
     switch(action.type){
