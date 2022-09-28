@@ -21,10 +21,10 @@ class Video(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "ownderId": self.owner_id,
+            "ownerId": self.owner_id,
             "title" : self.title,
             "video" : self.video,
             "description" : self.description,
-            "time_created" : self.time_created,
-            "time_updated" : self.time_updated
+            "timeCreated" : self.time_created,
+            "timeUpdated" : self.time_updated
         }

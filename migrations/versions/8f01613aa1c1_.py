@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 7493bffc85fd
+Revision ID: 8f01613aa1c1
 Revises: 
-Create Date: 2022-09-27 17:11:32.146970
+Create Date: 2022-09-28 09:09:20.644505
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '7493bffc85fd'
+revision = '8f01613aa1c1'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -30,10 +30,10 @@ def upgrade():
     op.create_table('videos',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('owner_id', sa.Integer(), nullable=False),
-    sa.Column('title', sa.String(), nullable=False),
+    sa.Column('title', sa.String(), nullable=True),
     sa.Column('video', sa.String(), nullable=False),
     sa.Column('thumbnail', sa.String(), nullable=True),
-    sa.Column('description', sa.String(), nullable=False),
+    sa.Column('description', sa.String(), nullable=True),
     sa.Column('time_created', sa.DateTime(timezone=True), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
     sa.Column('time_updated', sa.DateTime(timezone=True), nullable=True),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),

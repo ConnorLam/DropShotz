@@ -10,10 +10,14 @@ upload_routes = Blueprint("upload", __name__)
 @upload_routes.route("", methods=["POST"])
 @login_required
 def upload_video():
+    video = request.files["video"]
+    title = request.form["title"]
+    description = request.form['description']
+
+    # print('\n\n\n', request.files, '\n\n\n')
+
     if "video" not in request.files:
         return {"errors": "video required"}, 400
-
-    video = request.files["video"]
 
     if not allowed_file(video.filename):
         return {"errors": "file type not permitted"}, 400
@@ -30,7 +34,7 @@ def upload_video():
 
     url = upload["url"]
     # flask_login allows us to get the current user from the request
-    new_video = Video(user=current_user, url=url)
+    new_video = Video(user=current_user, video=url, title=title, description=description)
     db.session.add(new_video)
     db.session.commit()
     return {"url": url}
