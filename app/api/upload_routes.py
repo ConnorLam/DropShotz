@@ -19,6 +19,12 @@ def upload_video():
     if "video" not in request.files:
         return {"errors": "video required"}, 400
 
+    if 'title' not in request.form:
+        return {"errors": "title required"}, 400
+
+    if 'description' not in request.form:
+        return {"errors": "description required"}, 400
+
     if not allowed_file(video.filename):
         return {"errors": "file type not permitted"}, 400
     

@@ -1,4 +1,3 @@
-from turtle import title
 from app.models import db, Video
 
 def seed_videos():
