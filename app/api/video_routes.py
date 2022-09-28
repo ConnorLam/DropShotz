@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Blueprint, request
-from app.models import db, Video, Comment
+from app.models import db, Video, Comment, User
 from flask_login import current_user, login_required
 
 video_routes = Blueprint('videos', __name__)
@@ -43,10 +43,30 @@ def get_video_by_id(id):
     if not video:
         return {"message": "Video could not be found", "statusCode": 404}, 404
 
+    video_lst = video.to_dict()
+    comment_lst = [comment.to_dict() for comment in comments]
+    print('\n\n\n', comment_lst, '\n\n\n')
+
+    video_lst['comments'] = comment_lst
+
+    print('\n\n\n', video_lst, '\n\n\n')
+
     return {
-        'video': video.to_dict(),
-        'comments': [comment.to_dict() for comment in comments]
+        'video': video_lst
     }
+
+# @video_routes.route('/<int:id>')
+# def get_video_by_id(id):
+#     video = Video.query.get(id)
+#     comments = Comment.query.filter(Comment.video_id == id).all()
+
+#     if not video:
+#         return {"message": "Video could not be found", "statusCode": 404}, 404
+
+#     return {
+#         'video': video.to_dict(),
+#         'comments': [comment.to_dict() for comment in comments]
+#     }
 
 @video_routes.route('/<int:id>', methods=['PUT'])
 @login_required

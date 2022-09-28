@@ -69,7 +69,8 @@ export const getVidIdThunk = (videoId) => async dispatch => {
     const data = await res.json()
 
     if (res.ok) {
-        await dispatch(getVidIdAction(data))
+        // console.log(data, 'DATA')
+        await dispatch(getVidIdAction(data.video))
     }
 
     return data
@@ -117,6 +118,17 @@ const videoReducer = (state = initialState, action) => {
             action.payload.videos.forEach(video => {
                 newState[video.id] = {...newState[video.id], ...video}
             })
+            return newState
+        }
+        case(GET_USERS_VID): {
+            action.payload.videos.forEach(video => {
+                newState[video.id] = { ...newState[video.id], ...video}
+            })
+            return newState
+        }
+        case(GET_VID_ID): {
+            // console.log([action.payload.id], 'INSIDE REDUCER')
+            newState[action.payload.id] = { ...newState[action.payload.id], ...action.payload}
             return newState
         }
         default: {

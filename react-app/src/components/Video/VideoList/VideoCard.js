@@ -5,9 +5,11 @@ import { NavLink, useLocation } from "react-router-dom";
 
 function VideoCard({video}){
 
+
+
     return (
         <div>
-            <NavLink to={`/video/${video.id}`}>
+            <NavLink to={`/videos/${video.id}`}>
                 {/* <div>
                     <h3>{video.title}</h3>
                 </div> */}

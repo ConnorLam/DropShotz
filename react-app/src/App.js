@@ -10,6 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import UploadVideo from './components/UploadVideo';
 import AllVids from './components/Video/VideoList';
+import VideoPage from './components/Video/VideoPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -36,6 +37,9 @@ function App() {
         {/* <Route path={'/videos'} exact={true}>
           <AllVids />
         </Route> */}
+        <Route path={'/videos/:videoId'} exact={true}>
+          <VideoPage />
+        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
