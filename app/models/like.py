@@ -8,4 +8,4 @@ class Like(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     user = db.relationship("User", back_populates='likes')
-    video = db.relationship("Clip", back_populates = 'likes')
+    video = db.relationship("Video", back_populates = 'likes')
