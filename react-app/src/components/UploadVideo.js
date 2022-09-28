@@ -43,7 +43,7 @@ const UploadVideo = () => {
         <form onSubmit={handleSubmit}>
             <input
               type="file"
-              accept="image/*"
+              accept="mp4"
               onChange={updateVideo}
             />
             <button type="submit">Submit</button>

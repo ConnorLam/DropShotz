@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+// import 'videoplayback.mp4'
 
 const NavBar = () => {
   return (
@@ -30,6 +31,11 @@ const NavBar = () => {
         <li>
           <LogoutButton />
         </li>
+        {/* <video src='https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/1843f0df86e043ca9607094171962336.mp4' controls type='video/mp4' /> */}
+
+          {/* <source src='./videoplayback.mp4' type='video/mp4'></source>
+
+        </video> */}
       </ul>
     </nav>
   );
