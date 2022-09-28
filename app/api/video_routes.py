@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, request
 from app.models import db, Video, Comment
 from flask_login import current_user, login_required
@@ -46,6 +47,49 @@ def get_video_by_id(id):
         'video': video.to_dict(),
         'comments': [comment.to_dict() for comment in comments]
     }
+
+@video_routes.route('/<int:id>', methods=['PUT'])
+@login_required
+def edit_video_by_id(id):
+    video = Video.query.get(id)
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+    
+    if video.owner_id != current_user.id:
+        return {"message": "Forbidden", "statusCode": 403}, 403
+
+    print('\n\n\n\n', request.get_json()['description'], '\n\n\n\n')
+
+    title = request.get_json()['title']
+    description = request.get_json()['description']
+
+    video.title = title
+    video.description = description
+
+    db.session.commit()
+
+    return {
+        "video": video.to_dict()
+    }
+
+@video_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_video_by_id(id):
+    video = Video.query.get(id)
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+    
+    if video.owner_id != current_user.id:
+        return {"message": "Forbidden", "statusCode": 403}, 403
+
+    db.session.delete(video)
+    db.session.commit()
+
+    return {
+        "message": "Successfully deleted",  "statusCode": 200
+    }, 200
+
+
 
     
 
