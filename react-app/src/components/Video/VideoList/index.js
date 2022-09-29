@@ -24,9 +24,11 @@ const AllVids = () => {
         <div className="video-list-page">
             {/* <div>Videos</div> */}
             {/* <div> */}
+            {/* <div className="video-list"> */}
                 {videosArr.map(video => (
                     <VideoCard key={video.id} video={video} />
                 ))}
+            {/* </div> */}
             {/* </div> */}
         </div>
     )

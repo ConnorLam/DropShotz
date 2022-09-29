@@ -1,0 +1,65 @@
+#full-signup-page {
+    margin: 0% 20%;
+    box-sizing: border-box;
+    padding: 0px 15%;
+}
+
+#sign-up-header {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.firstName-lastName {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#first-last-input {
+    width: 49%;
+    margin: 0px;
+}
+
+.sign-up-submit {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sign-up-submit>button {
+    display: flex;
+    /* margin-left: 20px; */
+    margin-right: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgba(224, 7, 7, 1);
+    transition: .5s;
+    width: 100%;
+    color: white;
+    /* height: 0px; */
+    border: none;
+    padding: 10px;
+    justify-content: center;
+}
+
+.sign-up-submit>button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 14, 14);
+}
+
+.have-an-account {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.have-an-account-words {
+    margin-right: 5px;
+    color: #999999;
+}
+
+.have-an-account-link {
+    text-decoration: none;
+    color: #3686C4;
+}
