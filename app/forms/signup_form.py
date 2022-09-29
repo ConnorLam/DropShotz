@@ -19,6 +19,11 @@ def username_exists(form, field):
     if user:
         raise ValidationError('Username is already in use.')
 
+def default_pfp(form, field):
+    pfp = field.data
+    if not pfp:
+        pfp = 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg'
+
 
 class SignUpForm(FlaskForm):
     firstName = StringField(

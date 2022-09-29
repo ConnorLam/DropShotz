@@ -23,5 +23,6 @@ class Comment(db.Model):
             "userId": self.user_id,
             "comment": self.comment,
             "timeCreated": self.time_created,
-            "timeUpdated": self.time_updated
+            "timeUpdated": self.time_updated,
+            "user": self.user.to_dict()
         }

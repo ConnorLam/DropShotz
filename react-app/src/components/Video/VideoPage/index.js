@@ -14,7 +14,7 @@ const VideoPage = () => {
     const videos = useSelector(state => state.videos)
     // console.log(videos)
     const video = videos[Number(videoId)]
-    console.log(video)
+    // console.log(video.comments)
 
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -24,7 +24,7 @@ const VideoPage = () => {
     }, [dispatch, videoId])
 
     return isLoaded && (
-        <div>
+        <div className="video-page">
             <div>
                 <Video video={video}/>
             </div>

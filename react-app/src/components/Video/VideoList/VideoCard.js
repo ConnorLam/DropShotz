@@ -6,7 +6,7 @@ import { NavLink, useLocation } from "react-router-dom";
 function VideoCard({video}){
 
     const datePosted = new Date(video.timeCreated);
-    console.log(datePosted)
+    // console.log(datePosted)
     const now = Date.now();
     const milliseconds = Math.abs(now - datePosted);
     const minutes = Math.ceil(milliseconds / (1000 * 60));
@@ -21,6 +21,8 @@ function VideoCard({video}){
       postTimer = <>{days} days ago</>;
     }
 
+    console.log(video.user)
+
     return (
         <div className="each-video">
             <NavLink className='navlink' to={`/videos/${video.id}`}>
@@ -30,14 +32,21 @@ function VideoCard({video}){
                 <div className="video">
                     <video width='300' height='200' src={video.video} type='video/mp4' />
                 </div>
-                <div>
-                    <p>{video.title}</p>
+                <div className="title">
+                    <div className="prof-pic-div">
+                        <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                    </div>
+                    <div>
+                        {video.title}
+                    </div>
                 </div>
-                <div>
-                    <p>{video.user.username}</p>
+                <div className="second-row">
+                    <div className="username">
+                        {video.user.username}
+                    </div>
                 </div>
-                <div>
-                    <p>{postTimer}</p>
+                <div className="timer">
+                    {postTimer}
                 </div>
             </NavLink>
         </div>

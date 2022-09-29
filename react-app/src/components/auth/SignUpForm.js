@@ -25,24 +25,26 @@ const SignUpForm = () => {
       validationErrors.push("Passwords are not the same");
     // console.log(profilePicture && !/.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(profilePicture.split("?")[0]) && profilePicture.length !== 0)
 
-    if (
-      !/.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(
-        profilePicture.split("?")[0]
-      ) &&
-      profilePicture.length !== 0
-    ) {
+    if (!/.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(profilePicture.split("?")[0]) && profilePicture.length !== 0) {
       validationErrors.push("Please submit a valid preview image");
     }
 
     setErrors(validationErrors);
-  }, [password, repeatPassword, profilePicture]);
+  }, [password, repeatPassword, profilePicture, username, email]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
 
     setIsSubmitted(true);
 
+    // if (profilePicture.length === 0) {
+    //   setProfilePicture(
+    //     "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+    //   );
+    // }
+
     if (errors.length > 0) return;
+
 
     if (password === repeatPassword) {
       const data = await dispatch(
@@ -81,6 +83,10 @@ const SignUpForm = () => {
   const updateProfilePicture = (e) => {
     setProfilePicture(e.target.value);
   };
+
+  // const noProfilePicture = (e) => {
+  //   setProfilePicture('https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg')
+  // }
 
   if (user) {
     return <Redirect to='/' />;
