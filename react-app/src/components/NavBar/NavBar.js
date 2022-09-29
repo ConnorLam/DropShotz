@@ -16,14 +16,14 @@ const NavBar = () => {
   let session;
   if(!user){
     session = (
-      <nav>
-        <div>
-          <NavLink to='/login' exact={true}>Log In</NavLink>
+      <div className='login-signup'>
+        <div className='login-signup-link'>
+          <NavLink className='navlink' to='/login' exact={true}>Log In</NavLink>
         </div>
-        <div>
-          <NavLink to='/sign-up' exact={true}>Sign Up</NavLink>
+        <div className='login-signup-link'>
+          <NavLink className='navlink' to='/sign-up' exact={true}>Sign Up</NavLink>
         </div>
-      </nav>
+      </div>
     )
   } else {
     session = (
@@ -69,7 +69,7 @@ const NavBar = () => {
             {/* <UploadVideo /> */}
           {/* </div> */}
       </nav>
-      {/* <div className='navbar-spacer'></div> */}
+      <div className='navbar-spacer'></div>
     </>
   );
 }
