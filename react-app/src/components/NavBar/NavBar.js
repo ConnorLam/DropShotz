@@ -36,8 +36,8 @@ const NavBar = () => {
   return (
     <>
       <nav className='whole-nav'>
-          <div>
-            <NavLink to='/' exact={true} activeClassName='active'>
+          <div className='home-button'>
+            <NavLink className='navlink' to='/' exact={true} activeClassName='active'>
               DropShotz
             </NavLink>
           </div>

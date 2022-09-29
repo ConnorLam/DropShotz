@@ -8,13 +8,13 @@ function VideoCard({video}){
 
 
     return (
-        <div>
-            <NavLink to={`/videos/${video.id}`}>
+        <div className="each-video">
+            <NavLink className='navlink' to={`/videos/${video.id}`}>
                 {/* <div>
                     <h3>{video.title}</h3>
                 </div> */}
-                <div>
-                    <video width='400' height='300' src={video.video} type='video/mp4' />
+                <div className="video">
+                    <video width='300' height='200' src={video.video} type='video/mp4' />
                 </div>
                 <div>
                     <h3>{video.title}</h3>

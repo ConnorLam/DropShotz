@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getVidThunk } from "../../../store/video";
 import VideoCard from "./VideoCard";
+import './index.css'
 
 
 
@@ -20,13 +21,13 @@ const AllVids = () => {
     }, [dispatch])
 
     return isLoaded && (
-        <div>
-            <div>Videos</div>
-            <div>
+        <div className="video-list-page">
+            {/* <div>Videos</div> */}
+            {/* <div> */}
                 {videosArr.map(video => (
                     <VideoCard key={video.id} video={video} />
                 ))}
-            </div>
+            {/* </div> */}
         </div>
     )
     

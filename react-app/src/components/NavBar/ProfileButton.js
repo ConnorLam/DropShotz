@@ -30,8 +30,8 @@ const ProfileButton = ({user}) => {
             </div>
             {showMenu && (
                 <div className="drop-down">
-                        <div className="dropdown-info">
-                            {user.username}
+                        <div className="dropdown-welcome">
+                            Welcome {user.username}
                         </div>
                         <div className="dropdown-info">
                             <NavLink className='navlink' to='/upload-video' exact={true}>Upload Video</NavLink>
