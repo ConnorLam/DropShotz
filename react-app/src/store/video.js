@@ -87,7 +87,7 @@ export const updateVidThunk = ({video, videoId}) => async dispatch => {
     const data = await res.json()
 
     if (res.ok){
-        await dispatch(updateVidAction(data))
+        await dispatch(updateVidAction(data.video))
     }
 
     return data
@@ -102,7 +102,7 @@ export const deleteVidThunk = (videoId) => async dispatch => {
     const data = await res.json()
 
     if(res.ok){
-        await dispatch(deleteVidAction(data))
+        await dispatch(deleteVidAction(videoId))
     }
 
     return data
@@ -128,7 +128,15 @@ const videoReducer = (state = initialState, action) => {
         }
         case(GET_VID_ID): {
             // console.log([action.payload.id], 'INSIDE REDUCER')
-            newState[action.payload.id] = { ...newState[action.payload.id], ...action.payload}
+            newState[action.payload.id] = { ...newState[action.payload.id], ...action.payload }
+            return newState
+        }
+        case(UPDATE_VID): {
+            newState[action.payload.id] = { ...newState[action.payload.id], ...action.payload }
+            return newState
+        }
+        case(DELETE_VID): {
+            delete newState[action.payload]
             return newState
         }
         default: {

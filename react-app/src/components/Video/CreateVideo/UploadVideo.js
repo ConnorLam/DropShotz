@@ -30,8 +30,8 @@ const UploadVideo = () => {
         if (res.ok) {
             await res.json();
             setVideoLoading(false);
-            return
-            // history.push("/");
+            // return
+            history.push("/");
         }
         else {
             setVideoLoading(false);
