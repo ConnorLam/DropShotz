@@ -1,1 +1,16 @@
 /* TODO Add site wide styles */
+.no-nav-bar{
+    margin: 0% 5%;
+}
+
+.navlink{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    box-sizing: border-box;
+}

@@ -30,8 +30,8 @@ const UploadVideo = () => {
         if (res.ok) {
             await res.json();
             setVideoLoading(false);
-            return
-            // history.push("/");
+            // return
+            history.push("/");
         }
         else {
             setVideoLoading(false);
@@ -50,7 +50,7 @@ const UploadVideo = () => {
         <form onSubmit={handleSubmit}>
             <input
               type="file"
-              accept="mp4"
+              accept="video/mp4"
               onChange={updateVideo}
             />
             <label htmlFor="title">
