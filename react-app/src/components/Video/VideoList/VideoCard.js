@@ -14,7 +14,7 @@ function VideoCard({video}){
                     <h3>{video.title}</h3>
                 </div> */}
                 <div>
-                    <video width='400' height='300' src={video.video} controls type='video/mp4' />
+                    <video width='400' height='300' src={video.video} type='video/mp4' />
                 </div>
                 <div>
                     <h3>{video.title}</h3>

@@ -12,7 +12,7 @@ const DeleteVideo = ({video, setShowModal, setIsLoaded}) => {
         e.preventDefault()
         setIsLoaded(false)
 
-        const data = dispatch(deleteVidThunk(video.id))
+        const data = await dispatch(deleteVidThunk(video.id))
         history.push('/')
 
     }

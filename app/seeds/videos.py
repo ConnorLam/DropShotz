@@ -1,14 +1,33 @@
+from turtle import title
 from app.models import db, Video
 
 def seed_videos():
     video_1 = Video(
         owner_id = 2,
-        title = 'Not even a badminton video',
-        video = 'https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/1843f0df86e043ca9607094171962336.mp4',
-        description = 'sorry this is just a seeder for now'
+        title = 'Cool Point',
+        video = 'https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/dfb422030e364725b71e69db4060b70c.mp4',
+        description = 'end of my career'
     )
 
+    video_2 = Video(
+        owner_id = 2,
+        title = 'First tourney back from surgery',
+        video = 'https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/502b9562546d4c7e80bbc342791b2ee5.mp4',
+        description = 'i was so out of shape'
+    )
+
+    video_3 = Video(
+        owner_id = 2,
+        title = 'The Badminton dunk',
+        video = 'https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/3e7c036de665404c9bf426a89501e08f.mp4',
+        description = 'This is what badminton players call a dunk'
+    )
+
+    
+
     db.session.add(video_1)
+    db.session.add(video_2)
+    db.session.add(video_3)
     db.session.commit()
 
 
