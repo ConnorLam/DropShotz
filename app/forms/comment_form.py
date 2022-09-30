@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, Email, ValidationError, NumberRange
 
 def comment_length(form, field):
     comment = field.data
-    if len(comment) < 5 or len(comment) > 2000:
-        raise ValidationError('Comment must be between 5 and 2000 characters')
+    if len(comment) > 1000:
+        raise ValidationError('Comment must be 1000 characters or less')
 
 
 class CommentForm(FlaskForm):

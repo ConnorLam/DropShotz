@@ -50,7 +50,7 @@ export const getVidCommentThunk = (videoId) => async dispatch => {
     return data
 }
 
-export const createCommentThunk = ({videoId, comment, user}) => async dispatch => {
+export const createCommentThunk = ({videoId, comment}) => async dispatch => {
 
     const res = await fetch(`/api/videos/${videoId}/comments`,
         {
@@ -63,7 +63,8 @@ export const createCommentThunk = ({videoId, comment, user}) => async dispatch =
     const data = await res.json()
 
     if(res.ok){
-        await dispatch(createCommentAction({data, user})) //?
+        
+        await dispatch(createCommentAction(data))
     }
 
     return data
@@ -115,7 +116,8 @@ const commentsReducer = (state = initialState, action) => {
         }
         case (CREATE_COMMENT): {
             newState = { ...state }
-            newState[action.payload.data.id] = {...action.payload.data, user: action.payload.user}
+            // console.log('fasjkdfasjlfahjsd', action.payload)
+            newState[action.payload.id] = {...action.payload}
             return newState
         }
         case (UPDATE_COMMENT): {

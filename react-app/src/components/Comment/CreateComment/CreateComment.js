@@ -1,0 +1,66 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createCommentThunk } from "../../../store/comments";
+
+const CommentForm = ({video}) => {
+    const dispatch = useDispatch()
+    // console.log(video)
+    const [comment, setComment] = useState('')
+    const sessionUser = useSelector((state) => state.session.user);
+    const [validationErrors, setValidationErrors] = useState([])
+    const [hasSubmitted, setHasSubmitted] = useState(false)
+
+    useEffect(() => {
+        const errors = []
+        if(comment.length > 1000) errors.push('Comment must be 1000 characters or less')
+        if(!comment) errors.push('Please provide a comment')
+
+        setValidationErrors(errors)
+    }, [comment])
+
+    const handleSubmit = async e => {
+        e.preventDefault()
+
+        setHasSubmitted(true)
+
+        if(validationErrors.length > 0) return
+
+        const newComment = {
+            comment
+        }
+
+        setComment('')
+
+        const payload = {videoId: video.id, comment: newComment}
+
+        const data = await dispatch(createCommentThunk(payload))
+
+
+
+        return
+
+
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <textarea 
+                    type="text"
+                    name="comment"
+                    value={comment}
+                    placeholder='Write your comment here'
+                    onChange={e => setComment(e.target.value)}
+                />
+            </div>
+            <div>
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+    )
+
+}
+
+export default CommentForm

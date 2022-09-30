@@ -6,7 +6,6 @@ import { getVidIdThunk } from "../../../store/video";
 import { getVidCommentThunk } from "../../../store/comments";
 
 import Video from "./Video";
-import CommentInfo from "./Comments";
 
 const VideoPage = () => {
     const { videoId } = useParams()

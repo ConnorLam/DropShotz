@@ -5,6 +5,8 @@ import EditVideoModal from "../EditVideo/EditVideoModal";
 import DeleteVideoModal from "../EditVideo/DeleteVideoModal";
 import './index.css'
 
+import CommentForm from "../../Comment/CreateComment/CreateComment";
+
 
 const Video = ({video, commentsList}) => {
     // console.log(video.comments)
@@ -65,6 +67,9 @@ const Video = ({video, commentsList}) => {
                 <div className="video-description">{video.description}</div>
             </div>
             <div>
+                <CommentForm video={video}/>
+            </div>
+            <div>
                 <div>
                     <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
                 </div>
@@ -98,6 +103,9 @@ const Video = ({video, commentsList}) => {
                     </div>
                 </div>
                 <div className="video-description">{video.description}</div>
+            </div>
+            <div>
+                <CommentForm video={video}/>
             </div>
             <div>
                 <div>
