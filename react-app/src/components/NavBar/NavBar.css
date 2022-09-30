@@ -75,14 +75,16 @@
 }
 
 .dropdown-welcome{
-    padding: 3%;
-    margin: 1% 0%;
+    /* padding: 3%;
+    margin: 1% 0%; */
+    padding: 5%;
 }
 
 .dropdown-info{
-    margin: 1% 0%;
+    /* margin: 1% 0%; */
     /* text-decoration: none; */
-    padding: 3%;
+    padding: 5%;
+    display: flex;
     /* color: black; */
 }
 
@@ -101,7 +103,12 @@
     margin-right: 10px;
 }
 
-.favicon-home>img{
-    /* height: 30px;
-    width: 30px; */
+
+/* .favicon-home>img{
+    height: 30px;
+    width: 30px;
+} */
+
+.logo{
+    margin-right: 10px;
 }

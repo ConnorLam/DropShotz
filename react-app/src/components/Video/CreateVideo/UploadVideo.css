@@ -1,0 +1,60 @@
+.whole-create-vid-page{
+    margin: 0% 20%;
+    box-sizing: border-box;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    border-radius: 10px;
+    align-items: center;
+    height: 500px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2);
+    /* border: solid 1px black; */
+    width: 700px;
+    padding: 30px;
+}
+
+.test-div{
+    display: flex;
+    justify-content: center;
+}
+
+.submit-video-button>button{
+    display: flex;
+    /* margin-left: 20px; */
+    margin-right: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgba(224, 7, 7, 1);
+    transition: .5s;
+    width: 100%;
+    color: white;
+    /* height: 0px; */
+    border: none;
+    padding: 10px;
+    justify-content: center;
+}
+
+.submit-video-button>button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 14, 14);
+}
+
+.video-file{
+    border: none;
+    margin-top: 30px;
+    padding-left: 0px;
+    color: grey;
+}
+
+/* .video-file>button{
+    color: white;
+} */
+
+#input-field{
+    width: 600px;
+}
+
+#description{
+    height: 100px;
+}

@@ -22,24 +22,27 @@ const Video = ({video}) => {
     // fetchData();
     // }, []);
     // console.log(video.timeCreated.split(' ').slice(1, 4).join(' '))
-    const datePosted = new Date(video.timeCreated);
-    console.log(typeof(datePosted));
-    const now = Date.now();
-    const milliseconds = Math.abs(now - datePosted);
-    const minutes = Math.ceil(milliseconds / (1000 * 60));
-    const hours = Math.ceil(milliseconds / (1000 * 60 * 60));
-    const days = Math.ceil(milliseconds / (1000 * 60 * 60 * 24));
-    let postTimer;
-    if (minutes < 60) {
-    postTimer = <>{minutes} minutes ago</>;
-    } else if (hours < 24) {
-    postTimer = <>{hours} hours ago</>;
-    } else {
-    postTimer = <>{days} days ago</>;
+    if (isLoaded){
+
+        const datePosted = new Date(video.timeCreated);
+        console.log(typeof(datePosted));
+        const now = Date.now();
+        const milliseconds = Math.abs(now - datePosted);
+        const minutes = Math.ceil(milliseconds / (1000 * 60));
+        const hours = Math.ceil(milliseconds / (1000 * 60 * 60));
+        const days = Math.ceil(milliseconds / (1000 * 60 * 60 * 24));
+        let postTimer;
+        if (minutes < 60) {
+        postTimer = <>{minutes} minutes ago</>;
+        } else if (hours < 24) {
+        postTimer = <>{hours} hours ago</>;
+        } else {
+        postTimer = <>{days} days ago</>;
+        }
     }
 
     if(!sessionUser){
-        return (
+        return isLoaded && (
             <div className="video-section">
             <div>
                 <video height='700' width={1000} title={video.title} src={video.video} type='video/mp4' controls/>

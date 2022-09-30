@@ -13,3 +13,9 @@
     margin-top: 20px;
     color: #999999;
 }
+
+.video-title{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-line: underline;
+}

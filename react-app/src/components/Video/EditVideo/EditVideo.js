@@ -64,7 +64,7 @@ const EditVideo = ({video, setShowModal}) => {
       {isSubmitted &&
           validationErrors.map((error, i) => <div className='errors' key={i}><li>{error}</li></div>)}
       <form className='actual-edit-form' onSubmit={handleSubmit}>
-            <div className="edit-title">
+            <div className="edit-input">
                 <label htmlFor="title">Title</label>
                 <input
                     type="text"
@@ -73,7 +73,7 @@ const EditVideo = ({video, setShowModal}) => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
             </div>
-            <div>
+            <div className="edit-input">
                 <label htmlFor="description">Description</label>
                 <textarea
                     className="description-edit"
