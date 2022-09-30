@@ -6,7 +6,7 @@ import DeleteVideoModal from "../EditVideo/DeleteVideoModal";
 import './index.css'
 
 
-const Video = ({video}) => {
+const Video = ({video, commentsList}) => {
     // console.log(video.comments)
     // const [users, setUsers] = useState([]);
     // console.log(users)
@@ -25,7 +25,7 @@ const Video = ({video}) => {
     if (isLoaded){
 
         const datePosted = new Date(video.timeCreated);
-        console.log(typeof(datePosted));
+        // console.log(typeof(datePosted));
         const now = Date.now();
         const milliseconds = Math.abs(now - datePosted);
         const minutes = Math.ceil(milliseconds / (1000 * 60));
@@ -66,9 +66,9 @@ const Video = ({video}) => {
             </div>
             <div>
                 <div>
-                    <h4>{video.comments.length === 1 ? `${video.comments.length} Comment` : `${video.comments.length} Comments`} </h4>
+                    <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
                 </div>
-                {!video.comments.length ? <div>No Reviews Yet</div> : video.comments.map(comment => (
+                {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
                     <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
                 ))}
             </div>
@@ -101,9 +101,9 @@ const Video = ({video}) => {
             </div>
             <div>
                 <div>
-                    <h4>{video.comments.length === 1 ? `${video.comments.length} Comment` : `${video.comments.length} Comments`} </h4>
+                    <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
                 </div>
-                {!video.comments.length ? <div>No Reviews Yet</div> : video.comments.map(comment => (
+                {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
                     <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
                 ))}
             </div>
