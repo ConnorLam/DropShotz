@@ -57,4 +57,30 @@
 
 .page-pfp-div{
     margin-right: 7px;
+    height: 100%;
+}
+
+.page-username{
+    font-weight: bold;
+}
+
+.video-description{
+    margin-left: 46px;
+    font-size: 14px;
+}
+
+.edit-delete>button{
+    width: 100px;
+    margin-left: 10px;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(224, 7, 7, 1);
+    transition: .5s;
+    color: white;
+}
+
+.edit-delete>button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 14, 14);
 }

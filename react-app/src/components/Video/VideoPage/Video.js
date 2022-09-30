@@ -21,8 +21,9 @@ const Video = ({video}) => {
     // }
     // fetchData();
     // }, []);
+    // console.log(video.timeCreated.split(' ').slice(1, 4).join(' '))
     const datePosted = new Date(video.timeCreated);
-    console.log(datePosted);
+    console.log(typeof(datePosted));
     const now = Date.now();
     const milliseconds = Math.abs(now - datePosted);
     const minutes = Math.ceil(milliseconds / (1000 * 60));
@@ -39,27 +40,36 @@ const Video = ({video}) => {
 
     if(!sessionUser){
         return (
+            <div className="video-section">
             <div>
-                <div>
-                    <video height='700' width={1000} title={video.title} src={video.video} type='video/mp4' controls/>
-                </div>
-                <div>
-                    <h3>{video.title}</h3>
-                    {postTimer}
-                </div>
-                <div>
-                    <h3>Description</h3>
-                    <div>{video.description}</div>
-                </div>
-                <div>
-                    <div>
-                        <h4>Comments</h4>
-                    </div>
-                    {!video.comments.length ? <div>No Reviews Yet</div> : video.comments.map(comment => (
-                        <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
-                    ))}
+                <video height='700' width={1000} title={video.title} src={video.video} type='video/mp4' controls/>
+            </div>
+            <div className="section">
+                <div className="page-title">{video.title}</div>
+                <div className="timer-edit-delete">
+                    <div className="page-timer">{video.timeCreated.split(' ').slice(1, 4).join(' ')}</div>
                 </div>
             </div>
+            <div className="section">
+                <div className="pic-username">
+                    <div className="page-pfp-div">
+                        <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                    </div>
+                    <div className="page-username">
+                        {video.user.username}
+                    </div>
+                </div>
+                <div className="video-description">{video.description}</div>
+            </div>
+            <div>
+                <div>
+                    <h4>{video.comments.length === 1 ? `${video.comments.length} Comment` : `${video.comments.length} Comments`} </h4>
+                </div>
+                {!video.comments.length ? <div>No Reviews Yet</div> : video.comments.map(comment => (
+                    <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
+                ))}
+            </div>
+        </div>
         )
     }
 
@@ -71,7 +81,7 @@ const Video = ({video}) => {
             <div className="section">
                 <div className="page-title">{video.title}</div>
                 <div className="timer-edit-delete">
-                    <div className="page-timer">{postTimer}</div>
+                    <div className="page-timer">{video.timeCreated.split(' ').slice(1, 4).join(' ')}</div>
                     <div>{video.ownerId === sessionUser.id  ? <div className="edit-delete"> <EditVideoModal video={video}/> <DeleteVideoModal video={video} setIsLoaded={setIsLoaded} /> </div>: null}</div>
                 </div>
             </div>
@@ -80,7 +90,7 @@ const Video = ({video}) => {
                     <div className="page-pfp-div">
                         <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
                     </div>
-                    <div>
+                    <div className="page-username">
                         {video.user.username}
                     </div>
                 </div>

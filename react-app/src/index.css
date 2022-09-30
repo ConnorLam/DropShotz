@@ -74,3 +74,15 @@ button:hover {
 button:disabled {
     cursor: default;
 }
+
+textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* font-family: Graphik Meetup, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; */
+}

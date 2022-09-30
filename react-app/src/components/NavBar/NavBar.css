@@ -14,7 +14,7 @@
 }
 
 .home-button{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .login-signup{
@@ -92,3 +92,16 @@
     cursor: pointer;
 }
 
+.home-button-div{
+    display: flex;
+    align-items: center;
+}
+
+.favicon-home{
+    margin-right: 10px;
+}
+
+.favicon-home>img{
+    /* height: 30px;
+    width: 30px; */
+}
