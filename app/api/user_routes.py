@@ -13,7 +13,6 @@ def users():
 
 
 @user_routes.route('/<int:id>')
-@login_required
 def user(id):
     user = User.query.get(id)
     # video = Video.query.filter(Video.owner_id == id).all()
