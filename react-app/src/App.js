@@ -6,11 +6,12 @@ import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
-import User from './components/User';
+import User from './components/Video/UserVideos/User';
 import { authenticate } from './store/session';
 import UploadVideo from './components/Video/CreateVideo/UploadVideo';
 import AllVids from './components/Video/VideoList';
 import VideoPage from './components/Video/VideoPage';
+// import UserVidsList from './components/Video/UserVideos/UserVidsList';
 import './index.css'
 
 function App() {

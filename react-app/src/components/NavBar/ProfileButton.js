@@ -32,9 +32,9 @@ const ProfileButton = ({user}) => {
             </div>
             {showMenu && (
                 <div className="drop-down">
-                        <div className="dropdown-welcome">
-                            <span><i class="fa-regular fa-user logo"></i></span>
-                            Your Videos
+                        <div className="dropdown-info">
+                            <span><i className="fa-regular fa-user logo"></i></span>
+                            <NavLink className='navlink' to={`/users/${user.id}`} exact={true}>Your Videos</NavLink>
                         </div>
                         <div className="dropdown-info">
                             <span><i className="fa-solid fa-square-plus logo"></i></span>

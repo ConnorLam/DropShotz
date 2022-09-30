@@ -34,7 +34,9 @@ function VideoCard({video}){
                 </div>
                 <div className="title">
                     <div className="prof-pic-div">
-                        <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                        <NavLink to={`/users/${video.ownerId}`}>
+                            <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                        </NavLink>
                     </div>
                     <div>
                         {video.title}
