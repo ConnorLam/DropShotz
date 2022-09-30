@@ -1,0 +1,17 @@
+.user-video-list-page{
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: row; */
+    align-items: center;
+    background-color: #F9F9F9;
+    min-height: 100vh;
+    height: 100%;
+    /* justify-content: center; */
+}
+
+.user-videos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

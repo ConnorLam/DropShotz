@@ -29,3 +29,15 @@ class Video(db.Model):
             "timeUpdated" : self.time_updated,
             "user" : self.user.to_dict()
         }
+
+    def no_user_to_dict(self):
+        return {
+            "id": self.id,
+            "ownerId": self.owner_id,
+            "title" : self.title,
+            "video" : self.video,
+            "description" : self.description,
+            "timeCreated" : self.time_created,
+            "timeUpdated" : self.time_updated,
+            # "user" : self.user.to_dict()
+        }

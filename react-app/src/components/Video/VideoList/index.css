@@ -24,6 +24,13 @@
     height: 300px;
     margin: 0px 10px;
     margin-top: 10px;
+    transition: .5s;
+}
+
+.each-video:hover{
+    background-color: rgb(235, 232, 232);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 video{

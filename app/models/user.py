@@ -38,3 +38,14 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profilePicture': self.profile_picture
         }
+
+    def video_to_dict(self):
+        return{
+            'id': self.id,
+            'firstName': self.first_name,
+            'lastName': self.last_name,
+            'username': self.username,
+            'email': self.email,
+            'profilePicture': self.profile_picture,
+            'videos': [video.to_dict() for video in self.videos]
+        }
