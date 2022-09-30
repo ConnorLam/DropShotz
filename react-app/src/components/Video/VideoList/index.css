@@ -42,14 +42,14 @@ button:hover {
     align-items: center;
 }
 
-.second-row{
-    display: flex;
-    align-items: center;
+.username{
+    /* display: flex; */
+    /* align-items: center; */
     margin-left: 46px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     color: #3E3E3E;
     font-size: 15px;
-    height: 35px;
+    height: 20px;
     /* padding-bottom: 20px; */
     /* max-height: 30px; */
 }

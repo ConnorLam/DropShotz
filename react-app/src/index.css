@@ -31,7 +31,8 @@ input {
     border-radius: 5px;
     border: 1px solid black;
     box-sizing: border-box;
-    font-family: Graphik Meetup, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    /* font-family: Graphik Meetup, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; */
+    outline: none;
 }
 
 button.default {
@@ -84,6 +85,7 @@ textarea {
     border-radius: 5px;
     border: 1px solid black;
     box-sizing: border-box;
+    outline: none;
     /* font-family: Graphik Meetup, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; */
 }
 

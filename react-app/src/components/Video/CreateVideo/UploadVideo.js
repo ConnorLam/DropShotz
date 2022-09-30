@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
+import './UploadVideo.css'
 
 
 const UploadVideo = () => {
@@ -65,37 +66,55 @@ const UploadVideo = () => {
     }
     
     return (
-        <div>
-            <div>
-                <h3>Post your best badminton clips here!</h3>
-            </div>
-            {submitted && validationErrors.map(((error, i) => <div key={i}>{error}</div>))}
-            <form onSubmit={handleSubmit}>
-                <input
-                type="file"
-                accept="video/mp4"
-                onChange={updateVideo}
-                />
-                <label htmlFor="title">
-                    Title
-                </label>
-                <input
-                type='text'
-                name='title'
-                value={title}
-                onChange={e => setTitle(e.target.value)}
-                />
-                <label htmlFor="description">Description</label>
-                <textarea 
-                type="text"
-                name="description"
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-                />
+        <div className="test-div">
 
-                <button type="submit">Submit</button>
-                {(videoLoading)&& <p>Loading...</p>}
-            </form>
+            <div className="whole-create-vid-page">
+                <div>
+                    <h3>Post your best badminton clips here!</h3>
+                </div>
+                {submitted && validationErrors.map(((error, i) => <div className='errors' key={i}><li>{error}</li></div>))}
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        {/* <label htmlFor="title">
+                            Title
+                        </label> */}
+                        <input
+                            id="input-field"
+                            placeholder="Title"
+                            type='text'
+                            name='title'
+                            value={title}
+                            onChange={e => setTitle(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        {/* <label htmlFor="description">Description</label> */}
+                        <textarea 
+                            placeholder="Description"
+                            id="description"
+                            type="text"
+                            name="description"
+                            value={description}
+                            onChange={e => setDescription(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        {/* <h4>MP4 videos only please</h4> */}
+                        <input
+                            className="video-file"
+                            id="input-field"
+                            size={600}
+                            type="file"
+                            accept="video/mp4"
+                            onChange={updateVideo}
+                        />
+                    </div>
+                    <div className="submit-video-button">
+                        <button type="submit">Submit</button>
+                        {(videoLoading)&& <p>Loading...</p>}
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
