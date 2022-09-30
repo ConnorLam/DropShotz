@@ -47,6 +47,9 @@ button:hover {
     font-weight: bold;
     display: flex;
     align-items: center;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; */
 }
 
 .username{
@@ -76,6 +79,12 @@ button:hover {
     color: #3E3E3E;
     font-size: 15px;
 }
+
+/* .page-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+} */
 
 /* .video-list{
     width: 100%;
