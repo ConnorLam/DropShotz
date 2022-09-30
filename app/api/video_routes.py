@@ -2,6 +2,7 @@ from crypt import methods
 from flask import Blueprint, request
 from app.models import db, Video, Comment, User
 from flask_login import current_user, login_required
+from app.forms.comment_form import CommentForm
 
 video_routes = Blueprint('videos', __name__)
 
@@ -45,11 +46,11 @@ def get_video_by_id(id):
 
     video_lst = video.to_dict()
     comment_lst = [comment.to_dict() for comment in comments]
-    print('\n\n\n', comment_lst, '\n\n\n')
+    # print('\n\n\n', comment_lst, '\n\n\n')
 
     video_lst['comments'] = comment_lst
 
-    print('\n\n\n', video_lst, '\n\n\n')
+    # print('\n\n\n', video_lst, '\n\n\n')
 
     return {
         'video': video_lst
@@ -108,6 +109,48 @@ def delete_video_by_id(id):
     return {
         "message": "Successfully deleted",  "statusCode": 200
     }, 200
+
+
+@video_routes.route('/<int:id>/comments')
+def get_comments_for_video_by_id(id):
+    video = Video.query.get(id)
+
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+
+    comments = Comment.query.filter(Comment.video_id == id).all()
+
+    return {'Comments': [comment.to_dict() for comment in comments]}
+
+
+@video_routes.route('/<int:id>/comments', methods=["POST"])
+@login_required
+def post_comment_for_video(id):
+    video = Video.query.get(id)
+
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+
+    form = CommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+
+        comment = Comment(
+            user_id = current_user.id,
+            video_id = id,
+            comment = form.comment.data
+        )
+
+        # form.populate_obj(comment)
+
+        db.session.add(comment)
+        db.session.commit()
+
+        return comment.to_dict()
+
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 401
+
+    
 
 
 

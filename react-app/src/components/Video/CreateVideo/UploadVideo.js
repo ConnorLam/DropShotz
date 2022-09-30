@@ -18,6 +18,7 @@ const UploadVideo = () => {
 
         if(!video) errors.push('Please provide a video')
         if(!title) errors.push('Please provide a title')
+        if(title.length > 40) errors.push("Title must be 40 characters or less")
         if(!description) errors.push('Please provide a description')
         if(description.length < 5 || description.length > 200) errors.push('Description must be between 5 and 200 characters')
 
