@@ -6,14 +6,14 @@ const DeleteVideoModal = ({ video, setIsLoaded }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div>
+    <>
       <button onClick={() => setShowModal(true)}>Delete Video</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <DeleteVideo video={video} setShowModal={setShowModal} setIsLoaded={setIsLoaded}/>
         </Modal>
       )}
-    </div>
+    </>
   );
 };
 

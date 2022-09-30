@@ -1,12 +1,13 @@
+import profile
 from app.models import db, User
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        first_name='Demo', last_name='User', username='Demo', email='demo@aa.io', password='password')
+        first_name='Demo', last_name='User', username='Demo', email='demo@aa.io', password='password', profile_picture="https://blog.playo.co/wp-content/uploads/2017/04/feather-shuttlecock.jpg")
     connor = User(
-        first_name='Connor', last_name='Lam', username='connor', email='connor@aa.io', password='password')
+        first_name='Connor', last_name='Lam', username='connor', email='connor@aa.io', password='password', profile_picture='https://i1.sndcdn.com/avatars-lOjsNydIRiF4SYQm-dLVNzg-t240x240.jpg')
     irene = User(
         first_name='Irene', last_name='Lee', username='irene', email='irene@aa.io', password='password')
 

@@ -7,6 +7,7 @@ import ProfileButton from './ProfileButton';
 // import 'videoplayback.mp4'
 import './NavBar.css'
 import { useSelector } from 'react-redux';
+import badminton_icon from '../../assets/favicon_io/favicon-32x32.png'
 
 const NavBar = () => {
   
@@ -36,9 +37,14 @@ const NavBar = () => {
   return (
     <>
       <nav className='whole-nav'>
-          <div>
-            <NavLink to='/' exact={true} activeClassName='active'>
-              DropShotz
+          <div className='home-button'>
+            <NavLink className='navlink' to='/' exact={true} activeClassName='active'>
+              <div className='home-button-div'>
+                <span className='favicon-home'>
+                  <img src={badminton_icon} alt=''/>
+                </span>
+                DropShotz
+              </div>
             </NavLink>
           </div>
           {session}

@@ -72,6 +72,10 @@ export const logout = () => async (dispatch) => {
 
 export const signUp = (firstName, lastName, profilePicture, username, email, password) => async (dispatch) => {
   console.log(firstName, lastName)
+  if(!profilePicture){
+    profilePicture =
+      "https://blog.playo.co/wp-content/uploads/2017/04/feather-shuttlecock.jpg";
+  }
   const response = await fetch("/api/auth/signup", {
     method: "POST",
     headers: {

@@ -26,5 +26,6 @@ class Video(db.Model):
             "video" : self.video,
             "description" : self.description,
             "timeCreated" : self.time_created,
-            "timeUpdated" : self.time_updated
+            "timeUpdated" : self.time_updated,
+            "user" : self.user.to_dict()
         }

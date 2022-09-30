@@ -7,6 +7,7 @@ import './NavBar.css'
 const ProfileButton = ({user}) => {
 
     const [showMenu, setShowMenu] = useState(false)
+    
 
     function toggleMenu(e){
         setShowMenu(current => !current) 
@@ -26,12 +27,13 @@ const ProfileButton = ({user}) => {
     return (
         <div>
             <div onClick={e => toggleMenu(e)} className="profile-button">
-                <img className='profile-image' src="https://blog.playo.co/wp-content/uploads/2017/04/feather-shuttlecock.jpg" alt=""/>
+                {/* <img className='profile-image' src="https://blog.playo.co/wp-content/uploads/2017/04/feather-shuttlecock.jpg" alt=""/> */}
+                <img className='profile-image' src={user.profilePicture} alt=''/>
             </div>
             {showMenu && (
                 <div className="drop-down">
-                        <div className="dropdown-info">
-                            {user.username}
+                        <div className="dropdown-welcome">
+                            Welcome {user.username}
                         </div>
                         <div className="dropdown-info">
                             <NavLink className='navlink' to='/upload-video' exact={true}>Upload Video</NavLink>

@@ -6,14 +6,14 @@ const EditVideoModal = ({video}) => {
     const [showModal, setShowModal] = useState(false)
 
     return (
-        <div>
+        <>
             <button onClick={() => setShowModal(true)}>Edit Video</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditVideo video={video} setShowModal={setShowModal}/>
                 </Modal>
             )}
-        </div>
+        </>
     )
 }
 

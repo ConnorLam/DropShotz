@@ -1,0 +1,15 @@
+.delete-modal{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 60px;
+    align-items: center;
+}
+
+
+.nice-words{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #999999;
+}

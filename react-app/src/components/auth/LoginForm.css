@@ -1,0 +1,73 @@
+#full-login-page {
+    margin: 0% 20%;
+    box-sizing: border-box;
+    /* display: flex; */
+    /* flex-direction: row;
+    justify-content: center; */
+    height: 100%;
+    /* box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2); */
+}
+
+
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* width: 100%; */
+}
+
+.login-buttons>button {
+    display: flex;
+    /* margin-left: 20px; */
+    margin-right: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgba(224, 7, 7, 1);
+    color: white;
+    transition: .5s;
+    width: 100%;
+    border: none;
+    /* height: 0px; */
+    padding: 10px;
+    justify-content: center;
+}
+
+.login-buttons>button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 14, 14);
+}
+
+.login-to-dropshotz {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#input-field {
+    width: 50%;
+}
+
+.new-to-dropshotz {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.new-to-dropshotz-words {
+    margin-right: 5px;
+    color: #999999;
+}
+
+.new-to-dropshotz-link {
+    text-decoration: none;
+    color: #3686C4;
+}

@@ -1,0 +1,57 @@
+/* .whole-edit-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.edit-title{
+    width: 100%;
+} */
+
+.whole-edit-form{
+    padding: 0px 30px;
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-title {
+    width: 100%;
+}
+
+.actual-edit-form{
+    width: 100%;
+    height: 100%;
+}
+
+.cancel-submit-button{
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel-submit-button>button{
+    width: 450px;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(224, 7, 7, 1);
+    transition: .5s;
+    color: white;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.cancel-submit-button>button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 14, 14);
+}
+
+.description-edit{
+    height: 100px;
+}
+

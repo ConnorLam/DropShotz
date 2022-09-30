@@ -5,19 +5,48 @@ import { NavLink, useLocation } from "react-router-dom";
 
 function VideoCard({video}){
 
+    const datePosted = new Date(video.timeCreated);
+    // console.log(datePosted)
+    const now = Date.now();
+    const milliseconds = Math.abs(now - datePosted);
+    const minutes = Math.ceil(milliseconds / (1000 * 60));
+    const hours = Math.ceil(milliseconds / (1000 * 60 * 60));
+    const days = Math.ceil(milliseconds / (1000 * 60 * 60 * 24));
+    let postTimer;
+    if (minutes < 60) {
+      postTimer = <>{minutes} minutes ago</>;
+    } else if (hours < 24) {
+      postTimer = <>{hours} hours ago</>;
+    } else {
+      postTimer = <>{days} days ago</>;
+    }
 
+    console.log(video.user)
 
     return (
-        <div>
-            <NavLink to={`/videos/${video.id}`}>
+        <div className="each-video">
+            <NavLink className='navlink' to={`/videos/${video.id}`}>
                 {/* <div>
                     <h3>{video.title}</h3>
                 </div> */}
-                <div>
-                    <video width='400' height='300' src={video.video} type='video/mp4' />
+                <div className="video">
+                    <video width='300' height='200' src={video.video} type='video/mp4' />
                 </div>
-                <div>
-                    <h3>{video.title}</h3>
+                <div className="title">
+                    <div className="prof-pic-div">
+                        <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                    </div>
+                    <div>
+                        {video.title}
+                    </div>
+                </div>
+                <div className="second-row">
+                    <div className="username">
+                        {video.user.username}
+                    </div>
+                </div>
+                <div className="timer">
+                    {postTimer}
                 </div>
             </NavLink>
         </div>
