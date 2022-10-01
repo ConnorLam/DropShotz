@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import EditVideoModal from "../EditVideo/EditVideoModal";
 import DeleteVideoModal from "../EditVideo/DeleteVideoModal";
 import './index.css'
+import EditCommentModal from "../../Comment/UpdateComment/EditCommentModal";
 
 import CommentForm from "../../Comment/CreateComment/CreateComment";
 
@@ -112,7 +113,11 @@ const Video = ({video, commentsList}) => {
                     <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
                 </div>
                 {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
-                    <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
+                    <div key={comment.id}>
+                        <div>{comment.user.username}</div>
+                        <div>{comment.comment}</div>
+                        <div>{comment.userId === sessionUser.id ? <EditCommentModal video={video} comment={comment}/> : null}</div>
+                    </div>
                 ))}
             </div>
         </div>

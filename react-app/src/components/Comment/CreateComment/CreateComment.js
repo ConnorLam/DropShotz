@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createCommentThunk } from "../../../store/comments";
+import EditCommentModal from "../UpdateComment/EditCommentModal";
 
 const CommentForm = ({video}) => {
     const dispatch = useDispatch()
@@ -43,22 +44,28 @@ const CommentForm = ({video}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <textarea 
-                    type="text"
-                    name="comment"
-                    value={comment}
-                    placeholder='Write your comment here'
-                    onChange={e => setComment(e.target.value)}
-                />
-            </div>
-            <div>
-                <button type="submit">
-                    Submit
-                </button>
-            </div>
-        </form>
+        <div>
+            {hasSubmitted && validationErrors.map((error, i) => (
+                <div className="errors" key={i}><li>{error}</li></div>
+            ))}
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <textarea 
+                        type="text"
+                        name="comment"
+                        value={comment}
+                        placeholder='Write your comment here'
+                        onChange={e => setComment(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <button type="submit">
+                        Submit
+                    </button>
+                    {/* <EditCommentModal video={video}/> */}
+                </div>
+            </form>
+        </div>
     )
 
 }

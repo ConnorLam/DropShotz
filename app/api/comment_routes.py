@@ -20,7 +20,7 @@ def validation_errors_to_error_messages(validation_errors):
 @comment_routes.route('/<int:commentId>', methods=["PUT"])
 @login_required
 def edit_comment(commentId):
-
+    print('\n\n\n\n', request.data, '\n\n\n')
     comment = Comment.query.get(commentId)
 
     if not comment:
@@ -31,9 +31,11 @@ def edit_comment(commentId):
 
     form = CommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    # print('\n\n\n\n', form.errors, '\n\n\n')
     if form.validate_on_submit():
 
         comment.comment = form.comment.data
+        # print('\n\n\n\n', comment.comment, '\n\n\n')
 
         db.session.add(comment)
         db.session.commit()
