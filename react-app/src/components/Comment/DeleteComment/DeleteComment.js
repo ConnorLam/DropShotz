@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { deleteCommentThunk } from "../../../store/comments";
+import './DeleteComment.css'
 
 const DeleteComment = ({comment, setShowModal}) => {
     const dispatch = useDispatch()
@@ -21,9 +22,9 @@ const DeleteComment = ({comment, setShowModal}) => {
     };
 
     return(
-        <div>
+        <div className="delete-comment-form">
             <h3>Are you sure you want to delete your comment?</h3>
-            <div>
+            <div className="cancel-submit-button delete-comm-buttons">
                 <button onClick={handleClick}>Cancel</button>
                 <button onClick={handleDelete}>Delete</button>
             </div>

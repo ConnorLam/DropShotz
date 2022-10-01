@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { updateCommentThunk } from "../../../store/comments";
+import './EditComment.css'
 
 const EditComment = ({video, oldComment, setShowModal}) => {
     // console.log('asdhjfjklashfjklahlfjkajklfa', comment)
@@ -50,16 +51,18 @@ const EditComment = ({video, oldComment, setShowModal}) => {
 
 
     return (
-      <div>
+      <div className="edit-comment-modal">
+        <h3>Edit your comment</h3>
         {hasSubmitted &&
           validationErrors.map((error, i) => (
             <div className="errors" key={i}>
               <li>{error}</li>
             </div>
           ))}
-        <form onSubmit={handleSubmit}>
+        <form className="whole-edit-comment-form" onSubmit={handleSubmit}>
           <div>
             <textarea
+              className="edit-comm-text-area"
               type="text"
               name="comment"
               value={comment}
@@ -67,7 +70,7 @@ const EditComment = ({video, oldComment, setShowModal}) => {
               onChange={(e) => setComment(e.target.value)}
             />
           </div>
-          <div>
+          <div className="cancel-submit-button">
             <button onClick={handleClick}>Cancel</button>
             <button type="submit">Submit</button>
             {/* <EditCommentModal video={video}/> */}

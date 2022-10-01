@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { createCommentThunk } from "../../../store/comments";
 import EditCommentModal from "../UpdateComment/EditCommentModal";
 
+import './CreateComment.css'
+
 const CommentForm = ({video}) => {
     const dispatch = useDispatch()
     // console.log(video)
@@ -14,7 +16,6 @@ const CommentForm = ({video}) => {
     useEffect(() => {
         const errors = []
         if(comment.length > 1000) errors.push('Comment must be 1000 characters or less')
-        if(!comment) errors.push('Please provide a comment')
 
         setValidationErrors(errors)
     }, [comment])
@@ -36,7 +37,7 @@ const CommentForm = ({video}) => {
 
         const data = await dispatch(createCommentThunk(payload))
 
-
+        setHasSubmitted(false)
 
         return
 
@@ -59,7 +60,7 @@ const CommentForm = ({video}) => {
                     />
                 </div>
                 <div>
-                    <button type="submit">
+                    <button disabled={comment.length > 0 ? false : true} type="submit">
                         Submit
                     </button>
                     {/* <EditCommentModal video={video}/> */}

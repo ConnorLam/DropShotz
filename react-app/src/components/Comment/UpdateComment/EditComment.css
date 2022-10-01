@@ -1,0 +1,19 @@
+.edit-comment-modal{
+    width: 100%;
+    padding: 0px 30px;
+    padding-top: 60px;
+    align-items: center;
+}
+
+.edit-comment-modal>h3{
+    color: red;
+}
+
+.whole-edit-comment-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-comm-text-area{
+    height: 90px;
+}
