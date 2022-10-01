@@ -3,6 +3,8 @@
     padding: 0px 30px;
     padding-top: 60px;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .edit-comment-modal>h3{

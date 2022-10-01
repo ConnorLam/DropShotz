@@ -41,7 +41,7 @@ const deleteCommentAction = payload => {
 export const getVidCommentThunk = (videoId) => async dispatch => {
     const res = await fetch(`/api/videos/${videoId}/comments`)
     const data = await res.json()
-    console.log(data)
+    // console.log(data)
 
     if (res.ok){
         await dispatch(getVidCommentAction(data))
@@ -109,9 +109,12 @@ const commentsReducer = (state = initialState, action) => {
     let newState = {};
     switch(action.type){
         case (GET_VID_COMMENTS): {
+            // console.log(action.payload.Comments)
             action.payload.Comments.forEach(comment => {
+                // console.log(comment)
                 newState[comment.id] = comment
             })
+            // console.log(newState)
             return newState
         }
         case (CREATE_COMMENT): {
