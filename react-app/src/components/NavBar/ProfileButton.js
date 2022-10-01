@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import './NavBar.css'
+import { logout } from "../../store/session";
+import { useDispatch } from "react-redux";
+
 
 
 const ProfileButton = ({user}) => {
 
     const [showMenu, setShowMenu] = useState(false)
+    const dispatch = useDispatch()
+    const history = useHistory()
     
 
     function toggleMenu(e){
@@ -24,6 +29,11 @@ const ProfileButton = ({user}) => {
       return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
 
+    const onLogout = async (e) => {
+      await dispatch(logout());
+      history.push("/");
+    };
+
     return (
         <div>
             <div onClick={e => toggleMenu(e)} className="profile-button">
@@ -32,15 +42,19 @@ const ProfileButton = ({user}) => {
             </div>
             {showMenu && (
                 <div className="drop-down">
+                    <NavLink className='navlink' to={`/users/${user.id}`} exact={true}>
                         <div className="dropdown-info">
                             <span><i className="fa-regular fa-user logo"></i></span>
-                            <NavLink className='navlink' to={`/users/${user.id}`} exact={true}>Your Videos</NavLink>
+                            Your Videos
                         </div>
+                    </NavLink>
+                    <NavLink className='navlink' to='/upload-video' exact={true}>
                         <div className="dropdown-info">
                             <span><i className="fa-solid fa-square-plus logo"></i></span>
-                            <NavLink className='navlink' to='/upload-video' exact={true}>Upload Video</NavLink>
+                            Upload Video
                         </div>
-                        <div className="dropdown-info">
+                    </NavLink>
+                        <div onClick={onLogout} className="dropdown-info">
                             <span><i className="fa-solid fa-arrow-right-from-bracket logo"></i></span>
                             <LogoutButton />
                         </div>

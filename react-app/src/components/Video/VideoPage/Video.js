@@ -4,9 +4,13 @@ import { NavLink } from "react-router-dom";
 import EditVideoModal from "../EditVideo/EditVideoModal";
 import DeleteVideoModal from "../EditVideo/DeleteVideoModal";
 import './index.css'
+import EditCommentModal from "../../Comment/UpdateComment/EditCommentModal";
+import DeleteCommentModal from "../../Comment/DeleteComment/DeleteCommentModal";
+
+import CommentForm from "../../Comment/CreateComment/CreateComment";
 
 
-const Video = ({video}) => {
+const Video = ({video, commentsList}) => {
     // console.log(video.comments)
     // const [users, setUsers] = useState([]);
     // console.log(users)
@@ -25,7 +29,7 @@ const Video = ({video}) => {
     if (isLoaded){
 
         const datePosted = new Date(video.timeCreated);
-        console.log(typeof(datePosted));
+        // console.log(typeof(datePosted));
         const now = Date.now();
         const milliseconds = Math.abs(now - datePosted);
         const minutes = Math.ceil(milliseconds / (1000 * 60));
@@ -65,10 +69,13 @@ const Video = ({video}) => {
                 <div className="video-description">{video.description}</div>
             </div>
             <div>
+                <CommentForm video={video}/>
+            </div>
+            <div>
                 <div>
-                    <h4>{video.comments.length === 1 ? `${video.comments.length} Comment` : `${video.comments.length} Comments`} </h4>
+                    <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
                 </div>
-                {!video.comments.length ? <div>No Reviews Yet</div> : video.comments.map(comment => (
+                {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
                     <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
                 ))}
             </div>
@@ -100,11 +107,18 @@ const Video = ({video}) => {
                 <div className="video-description">{video.description}</div>
             </div>
             <div>
+                <CommentForm video={video}/>
+            </div>
+            <div>
                 <div>
-                    <h4>{video.comments.length === 1 ? `${video.comments.length} Comment` : `${video.comments.length} Comments`} </h4>
+                    <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
                 </div>
-                {!video.comments.length ? <div>No Reviews Yet</div> : video.comments.map(comment => (
-                    <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
+                {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
+                    <div key={comment.id}>
+                        <div>{comment.user.username}</div>
+                        <div>{comment.comment}</div>
+                        <div>{comment.userId === sessionUser.id ?<div><div><EditCommentModal video={video} comment={comment}/></div>  <div><DeleteCommentModal video={video} comment={comment}/></div></div> : null}</div>
+                    </div>
                 ))}
             </div>
         </div>
