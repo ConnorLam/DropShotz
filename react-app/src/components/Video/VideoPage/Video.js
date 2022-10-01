@@ -5,6 +5,7 @@ import EditVideoModal from "../EditVideo/EditVideoModal";
 import DeleteVideoModal from "../EditVideo/DeleteVideoModal";
 import './index.css'
 import EditCommentModal from "../../Comment/UpdateComment/EditCommentModal";
+import DeleteCommentModal from "../../Comment/DeleteComment/DeleteCommentModal";
 
 import CommentForm from "../../Comment/CreateComment/CreateComment";
 
@@ -116,7 +117,7 @@ const Video = ({video, commentsList}) => {
                     <div key={comment.id}>
                         <div>{comment.user.username}</div>
                         <div>{comment.comment}</div>
-                        <div>{comment.userId === sessionUser.id ? <EditCommentModal video={video} comment={comment}/> : null}</div>
+                        <div>{comment.userId === sessionUser.id ?<div><div><EditCommentModal video={video} comment={comment}/></div>  <div><DeleteCommentModal video={video} comment={comment}/></div></div> : null}</div>
                     </div>
                 ))}
             </div>
