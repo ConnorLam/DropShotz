@@ -157,10 +157,14 @@ const Video = ({video, commentsList}) => {
                     <div className='each-comment' key={comment.id}>
                         <div className="pic-username">
                             <div className="page-pfp-div">
-                                <img className='profile-image-video-list' src={comment.user.profilePicture} alt=''/>
+                                <NavLink to={`/users/${comment.user.id}`}>
+                                    <img className='profile-image-video-list' src={comment.user.profilePicture} alt=''/>
+                                </NavLink>
                             </div>
                             <div className='comment-username'>
-                                {comment.user.username}:
+                                <NavLink className='navlink username-nav go-to-user' to={`/users/${comment.user.id}`}>
+                                    {comment.user.username}:
+                                </NavLink>
                             </div>
                         </div>
                         <div className="second-half-comment">
