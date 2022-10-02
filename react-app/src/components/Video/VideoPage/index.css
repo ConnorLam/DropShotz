@@ -7,7 +7,7 @@
     padding-bottom: 30px;
     display: flex;
     justify-content: center;
-    /* background-color: #F9F9F9; */
+    background-color: #F9F9F9;
 }
 
 .section{
@@ -85,4 +85,41 @@
 .edit-delete>button:hover {
     cursor: pointer;
     background-color: rgb(255, 14, 14);
+}
+
+.comment-count{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #030303;
+}
+
+.go-to-user:hover{
+    color: #282828;
+}
+
+.each-comment{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.comment-username{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.second-half-comment{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.edit-delete-comment-button{
+    display: flex;
+}
+
+.delete-left-spacer{
+    margin-left: 5px;
 }

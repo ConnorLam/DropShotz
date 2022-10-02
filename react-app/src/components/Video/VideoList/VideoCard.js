@@ -43,9 +43,11 @@ function VideoCard({video}){
                     </div>
                 </div>
                 <div className="second-row">
-                    <div className="username">
-                        {video.user.username}
-                    </div>
+                        <div className="username">
+                            <NavLink className='navlink username-nav go-to-user' to={`/users/${video.ownerId}`}>
+                                <span className="go-to-user">{video.user.username}</span>
+                            </NavLink>
+                        </div>
                 </div>
                 <div className="timer">
                     {postTimer}

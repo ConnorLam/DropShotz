@@ -8,10 +8,16 @@ const DeleteCommentModal = ({ video, comment }) => {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Delete Comment</button>
+      <div>
+        <i onClick={() => setShowModal(true)} className="fa-solid fa-trash edit-comm-button"></i>
+      </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-            <DeleteComment video={video} comment={comment} setShowModal={setShowModal}/>
+          <DeleteComment
+            video={video}
+            comment={comment}
+            setShowModal={setShowModal}
+          />
         </Modal>
       )}
     </>

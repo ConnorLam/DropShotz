@@ -16,7 +16,8 @@ const VideoPage = () => {
     const video = videos[Number(videoId)]
 
     const comments = useSelector(state => state.comments)
-    const commentsList = Object.values(comments)
+    // console.log(comments)
+    const commentsList = Object.values(comments).reverse()
     // console.log(commentsList)
     // console.log(video.comments)
 

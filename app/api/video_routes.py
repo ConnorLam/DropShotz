@@ -118,9 +118,10 @@ def get_comments_for_video_by_id(id):
     if not video:
         return {"message": "Video could not be found", "statusCode": 404}, 404
 
-    # comments = Comment.query.filter(Comment.video_id == id).all()
+    comments = Comment.query.filter(Comment.video_id == id).order_by(Comment.time_created.desc()).all()
+    print('\n\n\n', comments)
 
-    return {'Comments': [comment.to_dict() for comment in video.comments]}
+    return {'Comments': [comment.to_dict() for comment in comments]}
 
 
 @video_routes.route('/<int:id>/comments', methods=["POST"])

@@ -1,0 +1,35 @@
+.edit-comment-modal{
+    width: 100%;
+    padding: 0px 30px;
+    padding-top: 60px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .edit-comment-modal>h3{
+    color: red;
+} */
+
+.whole-edit-comment-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-comm-text-area{
+    height: 90px;
+}
+
+.edit-comm-button{
+    cursor: pointer;
+
+}
+
+.edit-comm-button:hover{
+    color: rgb(65, 65, 248);
+}
+
+.comment{
+    width: 60%;
+    overflow-wrap: anywhere;
+}

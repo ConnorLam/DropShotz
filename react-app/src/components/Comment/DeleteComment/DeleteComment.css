@@ -1,0 +1,14 @@
+.delete-comment-form{
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .delete-comment-form>h3{
+    color: red;
+} */
+
+.delete-comm-buttons{
+    margin-top: 50px;
+}
