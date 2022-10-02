@@ -14,7 +14,7 @@ const EditComment = ({video, oldComment, setShowModal}) => {
 
     useEffect(() => {
       const errors = [];
-      if (comment.length > 1000) errors.push("Comment must be 1000 characters or less");
+      if (comment.length > 500) errors.push("Comment must be 500 characters or less");
       if (!comment) errors.push("Please provide a comment");
 
       setValidationErrors(errors);

@@ -9,10 +9,16 @@ const EditCommentModal = ({ video, comment }) => {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Edit Comment</button>
+      <div>
+        <i onClick={() => setShowModal(true)} className="fa-regular fa-pen-to-square edit-comm-button"></i>
+      </div>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)} className='pls-work'>
-            <EditComment video={video} oldComment={comment} setShowModal={setShowModal}/>
+        <Modal onClose={() => setShowModal(false)} className="pls-work">
+          <EditComment
+            video={video}
+            oldComment={comment}
+            setShowModal={setShowModal}
+          />
         </Modal>
       )}
     </>

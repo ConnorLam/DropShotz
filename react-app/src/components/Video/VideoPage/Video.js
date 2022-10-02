@@ -58,29 +58,65 @@ const Video = ({video, commentsList}) => {
                 </div>
             </div>
             <div className="section">
-                <div className="pic-username">
-                    <div className="page-pfp-div">
-                        <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                    <div className="pic-username">
+                        <div className="page-pfp-div">
+                            <NavLink className='navlink go-to-user' to={`/users/${video.ownerId}`}>
+                                <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                            </NavLink>
+                        </div>
+                        <div className="page-username">
+                            <NavLink className='navlink username-nav go-to-user' to={`/users/${video.ownerId}`}>
+                                <span className="go-to-user">{video.user.username}</span>
+                            </NavLink>
+                        </div>
                     </div>
-                    <div className="page-username">
-                        {video.user.username}
-                    </div>
+                <div className="video-description">
+                    {video.description}
                 </div>
-                <div className="video-description">{video.description}</div>
             </div>
-            {/* <div>
+            <div>
                 <CommentForm video={video}/>
-            </div> */}
+            </div>
             <div>
                 <div>
-                    <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
+                    <div className="comment-count">{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </div>
                 </div>
                 {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
-                    <div key={comment.id}>{comment.user.username},{' '}{comment.comment}</div>
+                    <div className='each-comment' key={comment.id}>
+                        <div className="pic-username">
+                            <div className="page-pfp-div">
+                                <NavLink to={`/users/${comment.user.id}`}>
+                                    <img className='profile-image-video-list' src={comment.user.profilePicture} alt=''/>
+                                </NavLink>
+                            </div>
+                            <div className='comment-username'>
+                                <NavLink className='navlink username-nav go-to-user' to={`/users/${comment.user.id}`}>
+                                    {comment.user.username}:
+                                </NavLink>
+                            </div>
+                        </div>
+                        <div className="second-half-comment">
+                            <div className="comment">
+                                {comment.comment}
+                            </div>
+                                {/* {
+                                    comment.userId === sessionUser.id ?
+                                    <div className="edit-delete-comment-button">
+                                        <div>
+                                            <EditCommentModal video={video} comment={comment}/>
+                                        </div>
+                                        <div className="delete-left-spacer">
+                                            <DeleteCommentModal video={video} comment={comment}/>
+                                        </div>
+                                    </div>
+                                    : null
+                                } */}
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
-        )
+    )
     }
 
     return isLoaded && (
@@ -96,28 +132,54 @@ const Video = ({video, commentsList}) => {
                 </div>
             </div>
             <div className="section">
-                <div className="pic-username">
-                    <div className="page-pfp-div">
-                        <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                <NavLink className='navlink go-to-user' to={`/users/${video.ownerId}`}>
+                    <div className="pic-username">
+                        <div className="page-pfp-div">
+                            <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
+                        </div>
+                        <div className="page-username">
+                            {video.user.username}
+                        </div>
                     </div>
-                    <div className="page-username">
-                        {video.user.username}
-                    </div>
+                </NavLink>
+                <div className="video-description">
+                    {video.description}
                 </div>
-                <div className="video-description">{video.description}</div>
             </div>
             <div>
                 <CommentForm video={video}/>
             </div>
             <div>
                 <div>
-                    <h4>{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </h4>
+                    <div className="comment-count">{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </div>
                 </div>
                 {!commentsList.length ? <div>No Reviews Yet</div> : commentsList.map(comment => (
-                    <div key={comment.id}>
-                        <div>{comment.user.username}</div>
-                        <div>{comment.comment}</div>
-                        <div>{comment.userId === sessionUser.id ?<div><div><EditCommentModal video={video} comment={comment}/></div>  <div><DeleteCommentModal video={video} comment={comment}/></div></div> : null}</div>
+                    <div className='each-comment' key={comment.id}>
+                        <div className="pic-username">
+                            <div className="page-pfp-div">
+                                <img className='profile-image-video-list' src={comment.user.profilePicture} alt=''/>
+                            </div>
+                            <div className='comment-username'>
+                                {comment.user.username}:
+                            </div>
+                        </div>
+                        <div className="second-half-comment">
+                            <div className="comment">
+                                {comment.comment}
+                            </div>
+                                {
+                                    comment.userId === sessionUser.id ?
+                                    <div className="edit-delete-comment-button">
+                                        <div>
+                                            <EditCommentModal video={video} comment={comment}/>
+                                        </div>
+                                        <div className="delete-left-spacer">
+                                            <DeleteCommentModal video={video} comment={comment}/>
+                                        </div>
+                                    </div>
+                                    : null
+                                }
+                        </div>
                     </div>
                 ))}
             </div>

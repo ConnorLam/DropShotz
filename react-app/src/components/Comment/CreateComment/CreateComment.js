@@ -15,7 +15,7 @@ const CommentForm = ({video}) => {
 
     useEffect(() => {
         const errors = []
-        if(comment.length > 1000) errors.push('Comment must be 1000 characters or less')
+        if(comment.length > 500) errors.push('Comment must be 500 characters or less')
 
         setValidationErrors(errors)
     }, [comment])
@@ -31,11 +31,11 @@ const CommentForm = ({video}) => {
             comment
         }
 
-        setComment('')
-
+        
         const payload = {videoId: video.id, comment: newComment}
-
+        
         const data = await dispatch(createCommentThunk(payload))
+        setComment('')
 
         setHasSubmitted(false)
 
@@ -45,13 +45,14 @@ const CommentForm = ({video}) => {
     }
 
     return (
-        <div>
+        <div className="comment-form-page">
             {hasSubmitted && validationErrors.map((error, i) => (
                 <div className="errors" key={i}><li>{error}</li></div>
             ))}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <textarea 
+                    <textarea
+                        className="create-comm-textarea"
                         type="text"
                         name="comment"
                         value={comment}
@@ -59,9 +60,9 @@ const CommentForm = ({video}) => {
                         onChange={e => setComment(e.target.value)}
                     />
                 </div>
-                <div>
-                    <button disabled={comment.length > 0 ? false : true} type="submit">
-                        Submit
+                <div className="submit-button-div">
+                    <button className="submit-button" id={comment.length > 0 ? 'yes-comm' : 'no-comm'} disabled={comment.length > 0 ? false : true} type="submit">
+                        COMMENT
                     </button>
                     {/* <EditCommentModal video={video}/> */}
                 </div>
