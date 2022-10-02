@@ -5,11 +5,16 @@
     padding: 0% 5%;
     /* margin-bottom: 2%; */
     /* width: 100%; */
-    height: 70px;
+    height: 75px;
+    /* position: fixed;
+    top: 0px;
+    width: 100%; */
+    /* margin-bottom: 75px; */
     /* padding-bottom: 2%; */
     /* border-bottom: 1px solid rgb(220, 220, 220); */
     box-sizing: border-box;
     align-items: center;
+
     /* position: relative; */
 }
 
@@ -24,11 +29,28 @@
 
 .login-signup-link{
     margin-left: 15px;
+    font-size: large;
+    /* border: solid 1.5px rgb(92, 92, 246); */
+    /* border: solid 1.5px red; */
+    background-color: rgba(224, 7, 7, 1);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* color: white; */
     /* height: 50px; */
 }
 
+.login-signup-link>a{
+    color: white;
+}
+
+/* .login{
+    font-size: large;
+} */
+
+
 .login-signup-link:hover {
-    background-color: rgb(143, 142, 142);
+    background-color: rgb(255, 14, 14);
     /* height: 50px; */
 }
 
@@ -37,7 +59,12 @@
     /* padding-top: 1%; */
     box-sizing: border-box;
     border-bottom: 1px solid rgb(220, 220, 220);
+    /* position: fixed; */
+    /* top: 75px; */
+    /* position: fixed;
+    top: 75px; */
     /* width: 100%; */
+    /* margin-top: 75px; */
 }
 
 .profile-button{
