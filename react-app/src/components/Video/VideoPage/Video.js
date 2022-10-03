@@ -49,7 +49,7 @@ const Video = ({video, commentsList}) => {
         return isLoaded && (
             <div className="video-section">
             <div>
-                <video height='700' width={1000} title={video.title} src={video.video} type='video/mp4' controls/>
+                <video className="video-on-page" title={video.title} src={video.video} type='video/mp4' controls/>
             </div>
             <div className="section">
                 <div className="page-title">{video.title}</div>
@@ -122,7 +122,7 @@ const Video = ({video, commentsList}) => {
     return isLoaded && (
         <div className="video-section">
             <div>
-                <video height='700' width={1000} title={video.title} src={video.video} type='video/mp4' controls/>
+                <video className="video-on-page" title={video.title} src={video.video} type='video/mp4' controls/>
             </div>
             <div className="section">
                 <div className="page-title">{video.title}</div>
@@ -132,16 +132,18 @@ const Video = ({video, commentsList}) => {
                 </div>
             </div>
             <div className="section">
-                <NavLink className='navlink go-to-user' to={`/users/${video.ownerId}`}>
-                    <div className="pic-username">
-                        <div className="page-pfp-div">
+                <div className="pic-username">
+                    <div className="page-pfp-div">
+                        <NavLink className='navlink go-to-user' to={`/users/${video.ownerId}`}>
                             <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
-                        </div>
-                        <div className="page-username">
-                            {video.user.username}
-                        </div>
+                        </NavLink>
                     </div>
-                </NavLink>
+                    <div className="page-username">
+                        <NavLink className='navlink username-nav go-to-user' to={`/users/${video.ownerId}`}>
+                            <span className="go-to-user">{video.user.username}</span>
+                        </NavLink>
+                    </div>
+                </div>
                 <div className="video-description">
                     {video.description}
                 </div>
