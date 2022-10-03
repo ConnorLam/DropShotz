@@ -57,6 +57,7 @@ const UploadVideo = () => {
             setVideoLoading(false);
             // a real app would probably use more advanced
             // error handling
+            console.log(res.errors)
             console.log(res);
         }
     }
