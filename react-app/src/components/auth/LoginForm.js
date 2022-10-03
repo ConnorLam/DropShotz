@@ -47,7 +47,7 @@ const LoginForm = () => {
         <h3>Log in to DropShotz</h3>
       </div>
       <form className="login-form" onSubmit={onLogin}>
-        <div>
+        <div className='errors-div'>
           {errors.map((error, ind) => (
             <div className='errors' key={ind}><li>{error}</li></div>
           ))}
