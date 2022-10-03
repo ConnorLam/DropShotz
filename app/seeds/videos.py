@@ -30,12 +30,73 @@ def seed_videos():
         description = 'SHOUTOUT EDGAR'
     )
 
+    videos = [
+        {
+            "owner_id" : 2,
+            "title" : "usa vs japan 1/7",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/28cc64b0c564451d8475782f39028b2e.mp4",
+            "description" : "My friends at canada open"
+        },
+        {
+            "owner_id" : 2,
+            "title" : "usa vs japan 2/7",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/939e518a403e4ee0a2602b50a47d079d.mp4",
+            "description" : "My friends at canada open" 
+        },
+        {
+            "owner_id" : 2,
+            "title" : "usa vs japan 3/7",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/2f905730c52a4fe39ea61f0709dc0055.mp4",
+            "description" : "My friends at canada open"
+        },
+        {
+            "owner_id" : 2,
+            "title" : "usa vs japan 4/7",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/e9e6194560cc4cfd878dd1a006703327.mp4",
+            "description" : "My friends at canada open"
+        },
+        {
+            "owner_id" : 2,
+            "title" : "usa vs japan 5/7",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/0e702f73d6e84109bdb29aaeb66eea7c.mp4",
+            "description" : "My friends at canada open"
+        },
+        {
+            "owner_id" : 2,
+            "title" : "usa vs japan 6/7",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/9c525129469e4961b20fcaa8d4d638ad.mp4",
+            "description" : "My friends at canada open"
+        }
+    ]
+        # {
+        #     "owner_id" : 2,
+        #     "title" : "usa vs japan 7/7",
+        #     "video" : "",
+        #     "description" : "My friends at canada open"
+        # },
+        # {
+        #     "owner_id" : ,
+        #     "title" : ,
+        #     "video" : ,
+        #     "description" :
+        # },
+
     
 
     db.session.add(video_1)
     db.session.add(video_2)
     db.session.add(video_3)
     db.session.add(video_4)
+
+    for video in videos:
+        new_video = Video(
+            owner_id = video["owner_id"],
+            title = video["title"],
+            video = video["video"],
+            description = video["description"]
+        )
+        db.session.add(new_video)
+
     db.session.commit()
 
 
