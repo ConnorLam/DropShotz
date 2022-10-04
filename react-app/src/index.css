@@ -87,9 +87,10 @@ textarea {
     border: 1px solid black;
     box-sizing: border-box;
     outline: none;
-    /* font-family: Graphik Meetup, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .errors{
-    color: red;
+    color: rgb(246, 92, 92);
+    /* color: blue; */
 }

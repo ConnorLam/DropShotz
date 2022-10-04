@@ -57,7 +57,7 @@ const UploadVideo = () => {
             setVideoLoading(false);
             // a real app would probably use more advanced
             // error handling
-            console.log(res.errors)
+            // console.log(res.errors)
             console.log(res);
         }
     }
@@ -68,7 +68,7 @@ const UploadVideo = () => {
     }
     
     return (
-        <div className="test-div">
+        <div className="outer-create-page-div">
 
             <div className="whole-create-vid-page">
                 <div>

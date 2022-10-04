@@ -139,3 +139,27 @@
 .logo{
     margin-right: 10px;
 }
+
+
+.nav-right{
+    display: flex;
+    align-items: center;
+
+}
+
+.create-vid-link{
+    margin-right: 16px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    justify-content: center;
+    border-radius: 10px;
+    transition: .3s;
+    /* border: 1px rgb(92, 91, 91) solid; */
+}
+
+.create-vid-link:hover{
+    text-decoration: none;
+    background-color: rgb(240, 240, 240);
+}

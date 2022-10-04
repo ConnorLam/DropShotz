@@ -28,10 +28,20 @@ const NavBar = () => {
     )
   } else {
     session = (
-      <div>
-        <ProfileButton user={user}/>
+      <div className='nav-right'>
+        <NavLink className="navlink" to="/upload-video" exact={true}>
+          <div className="create-vid-link">
+            <span>
+              <i className="fa-solid fa-square-plus logo"></i>
+            </span>
+            Upload Video
+          </div>
+        </NavLink>
+        <div>
+          <ProfileButton user={user} />
+        </div>
       </div>
-    )
+    );
   }
 
   return (
