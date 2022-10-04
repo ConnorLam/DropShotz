@@ -27,7 +27,8 @@ class Video(db.Model):
             "description" : self.description,
             "timeCreated" : self.time_created,
             "timeUpdated" : self.time_updated,
-            "user" : self.user.to_dict()
+            "user" : self.user.to_dict(),
+            "likes": [like.to_dict() for like in self.likes]
         }
 
     def no_user_to_dict(self):

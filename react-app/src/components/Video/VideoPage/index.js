@@ -15,6 +15,7 @@ const VideoPage = () => {
     const videos = useSelector(state => state.videos)
     // console.log(videos)
     const video = videos[Number(videoId)]
+    // console.log(video)
 
     const comments = useSelector(state => state.comments)
     // console.log(comments)
