@@ -1,3 +1,4 @@
+from email.policy import default
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -12,7 +13,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
-    profile_picture = db.Column(db.String(1000))
+    profile_picture = db.Column(db.String(1000), default='https://blog.playo.co/wp-content/uploads/2017/04/feather-shuttlecock.jpg')
 
     videos = db.relationship('Video', back_populates='user')
     likes = db.relationship('Like', back_populates='user')

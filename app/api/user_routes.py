@@ -15,5 +15,8 @@ def users():
 @user_routes.route('/<int:id>')
 def user(id):
     user = User.query.get(id)
+
+    if not user:
+        return {"message": "User could not be found", "statusCode": 404}, 404
     # video = Video.query.filter(Video.owner_id == id).all()
     return user.video_to_dict()

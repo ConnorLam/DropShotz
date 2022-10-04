@@ -12,6 +12,7 @@ import UploadVideo from './components/Video/CreateVideo/UploadVideo';
 import AllVids from './components/Video/VideoList';
 import VideoPage from './components/Video/VideoPage';
 import Footer from './components/footer/footer';
+import NotFound from './components/NotFound/NotFound';
 // import UserVidsList from './components/Video/UserVideos/UserVidsList';
 import './index.css'
 
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path='/' exact={true} >
             <AllVids />
+          </Route>
+          <Route path='*'>
+            <NotFound />
           </Route>
         </Switch>
       </div>

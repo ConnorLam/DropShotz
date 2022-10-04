@@ -96,3 +96,10 @@ textarea {
     color: rgb(246, 92, 92);
     /* color: blue; */
 }
+
+.not-found{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
