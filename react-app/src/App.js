@@ -17,6 +17,7 @@ import './index.css'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [leftBar, setLeftBar] = useState(false)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,9 +33,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar setLeftBar={setLeftBar}/>
       <div className='no-nav-bar'>
-      <Footer />
+      <Footer leftBar={leftBar} setLeftBar={setLeftBar}/>
         <Switch>
           <Route path={'/upload-video'} exact={true}>
             <UploadVideo />
