@@ -1,7 +1,7 @@
 .whole-create-vid-page{
     margin: 0% 20%;
     box-sizing: border-box;
-    margin-top: 100px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -14,9 +14,10 @@
     padding: 30px;
 }
 
-.test-div{
+.outer-create-page-div{
     display: flex;
     justify-content: center;
+    /* margin-bottom: 100px; */
 }
 
 .submit-video-button>button{

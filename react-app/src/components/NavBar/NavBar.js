@@ -9,10 +9,10 @@ import './NavBar.css'
 import { useSelector } from 'react-redux';
 import badminton_icon from '../../assets/favicon_io/favicon-32x32.png'
 
-const NavBar = () => {
+const NavBar = ({setLeftBar}) => {
   
   const user = useSelector(state => state.session.user)
-  console.log(user)
+  // console.log(user)
 
   let session;
   if(!user){
@@ -28,16 +28,30 @@ const NavBar = () => {
     )
   } else {
     session = (
-      <div>
-        <ProfileButton user={user}/>
+      <div className='nav-right'>
+        <NavLink className="navlink" to="/upload-video" exact={true}>
+          <div className="create-vid-link">
+            <span>
+              <i className="fa-solid fa-square-plus logo"></i>
+            </span>
+            Upload Video
+          </div>
+        </NavLink>
+        <div>
+          <ProfileButton user={user} />
+        </div>
       </div>
-    )
+    );
   }
+
 
   return (
     <>
       <nav className='whole-nav'>
           <div className='home-button'>
+            <div className='burger'>
+              <i onClick={() => setLeftBar(curr => !curr)} class="fa-solid fa-bars burger-icon"></i>
+            </div>
             <NavLink className='navlink' to='/' exact={true} activeClassName='active'>
               <div className='home-button-div'>
                 <span className='favicon-home'>

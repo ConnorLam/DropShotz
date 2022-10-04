@@ -97,8 +97,8 @@ const SignUpForm = () => {
       <div id='sign-up-header'>
         <h3>Sign Up for DropShotz</h3>
       </div>
-      <form onSubmit={onSignUp}>
-        <div>
+      <form className='' onSubmit={onSignUp}>
+        <div className='error-class'>
           {isSubmitted && errors.map((error, ind) => (
             <div className='errors' key={ind}><li>{error}</li></div>
           ))}
@@ -107,7 +107,7 @@ const SignUpForm = () => {
           <div id='first-last-input'>
             {/* <label>First Name</label> */}
             <input
-              required
+              // required
               placeholder="First Name"
               type="text"
               name="first name"
@@ -118,7 +118,7 @@ const SignUpForm = () => {
           <div id='first-last-input'>
             {/* <label>Last Name</label> */}
             <input
-              required
+              // required
               placeholder="Last Name"
               type="text"
               name="username"
@@ -165,7 +165,7 @@ const SignUpForm = () => {
             name="repeat_password"
             onChange={updateRepeatPassword}
             value={repeatPassword}
-            required={true}
+            // required={true}
           ></input>
         </div>
         <div>

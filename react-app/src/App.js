@@ -11,11 +11,13 @@ import { authenticate } from './store/session';
 import UploadVideo from './components/Video/CreateVideo/UploadVideo';
 import AllVids from './components/Video/VideoList';
 import VideoPage from './components/Video/VideoPage';
+import Footer from './components/footer/footer';
 // import UserVidsList from './components/Video/UserVideos/UserVidsList';
 import './index.css'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [leftBar, setLeftBar] = useState(false)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,8 +33,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar setLeftBar={setLeftBar}/>
       <div className='no-nav-bar'>
+      <Footer leftBar={leftBar} setLeftBar={setLeftBar}/>
         <Switch>
           <Route path={'/upload-video'} exact={true}>
             <UploadVideo />
