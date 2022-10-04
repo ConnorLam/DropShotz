@@ -20,6 +20,7 @@ footer{
     min-width: 180px;
     height: auto;
     max-height: 100%;
+    border-right: solid 1px #E5E5E5;
 }
 
 .icon{

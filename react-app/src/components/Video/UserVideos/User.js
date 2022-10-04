@@ -51,7 +51,7 @@ function User() {
 
   return isLoaded && (
       <div className="user-video-list-page">
-        <h3>{user.videos.length ? `${user.username}'s videos` : `${user.username} has no videos availablee`}</h3>
+        <h3>{user.videos.length ? `${user.username}'s videos` : `${user.username} has no videos available`}</h3>
         <div className="user-videos">
           {vidList.map((video, i) => (
             <VideoCard key={i} video={video} />
