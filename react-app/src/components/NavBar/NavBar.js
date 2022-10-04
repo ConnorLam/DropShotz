@@ -50,7 +50,7 @@ const NavBar = ({setLeftBar}) => {
       <nav className='whole-nav'>
           <div className='home-button'>
             <div className='burger'>
-              <i onClick={() => setLeftBar(curr => !curr)} class="fa-solid fa-bars burger-icon"></i>
+              <i onClick={() => setLeftBar(curr => !curr)} className="fa-solid fa-bars burger-icon"></i>
             </div>
             <NavLink className='navlink' to='/' exact={true} activeClassName='active'>
               <div className='home-button-div'>

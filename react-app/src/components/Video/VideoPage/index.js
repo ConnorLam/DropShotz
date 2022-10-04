@@ -4,6 +4,7 @@ import { Switch, Route, useParams, useRouteMatch, Redirect } from "react-router-
 
 import { getVidIdThunk } from "../../../store/video";
 import { getVidCommentThunk } from "../../../store/comments";
+import NotFound from "../../NotFound/NotFound";
 
 import Video from "./Video";
 
@@ -28,6 +29,10 @@ const VideoPage = () => {
         .then(() => dispatch(getVidCommentThunk(videoId)))
         .then(() => setIsLoaded(true))
     }, [dispatch, videoId])
+
+    if(!video){
+        return <NotFound />
+    }
 
     return isLoaded && (
         <div className="video-page">
