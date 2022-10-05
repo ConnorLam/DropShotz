@@ -18,7 +18,17 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
     // console.log(users)
     const sessionUser = useSelector(state => state.session.user)
     // const [isLoaded, setIsLoaded] = useState(true)
-    // if(sessionUser.id )
+    // if(sessionUser.id ){
+
+    // }
+
+    const likesId = likesList.map(like => {
+        return like.userId
+        // gets the user id of each like so we can see if user already has a like
+    })
+
+    
+
     // const handleClick = async e => {
     //     // e.preventDefault()
     //     // if (sessionUser.id)
