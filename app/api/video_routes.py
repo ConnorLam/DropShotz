@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Blueprint, request
-from app.models import db, Video, Comment, User
+from app.models import db, Video, Comment, User, Like
 from flask_login import current_user, login_required
 from app.forms.comment_form import CommentForm
 
@@ -13,7 +13,7 @@ def validation_errors_to_error_messages(validation_errors):
     errorMessages = []
     for field in validation_errors:
         for error in validation_errors[field]:
-            errorMessages.append(f'{field} : {error}')
+            errorMessages.append(f'{error}')
     return errorMessages
 
 
@@ -151,6 +151,38 @@ def post_comment_for_video(id):
 
     return {"errors": validation_errors_to_error_messages(form.errors)}, 401
 
+@video_routes.route('/<int:id>/like', methods=["POST"])
+@login_required
+def post_like_for_video(id):
+    video = Video.query.get(id)
+    # print(video.likes)
+
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+
+    # if current_user.id in video.likes:
+    #     return {"message": "User cannot like the same video", "statusCode": 401}, 401
+
+    like = Like(user_id = current_user.id, video_id = id)
+    db.session.add(like)
+    db.session.commit()
+    return like.to_dict()
+
+
+@video_routes.route('/likes/<int:id>', methods=['DELETE'])
+@login_required
+def delete_like_for_video(id):
+    like = Like.query.get(id)
+
+    if not like:
+        return {"message": "Like could not be found", "statusCode": 404}, 404
+        #?
+
+    db.session.delete(like)
+    db.session.commit()
+    return {
+        "message": "Successfully deleted",  "statusCode": 200
+    }, 200
     
 
 

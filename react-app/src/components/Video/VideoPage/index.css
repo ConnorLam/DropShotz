@@ -83,6 +83,7 @@
 .video-description{
     margin-left: 46px;
     font-size: 14px;
+    overflow-wrap: break-word;
 }
 
 .edit-delete>button{
@@ -136,4 +137,22 @@
 
 .delete-left-spacer{
     margin-left: 5px;
+}
+
+.first-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.likes{
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+}
+
+.like-button{
+    /* color: blue; */
+    /* margin-right: 10px; */
 }

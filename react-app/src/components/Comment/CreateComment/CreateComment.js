@@ -15,7 +15,7 @@ const CommentForm = ({video}) => {
 
     useEffect(() => {
         const errors = []
-        if(comment.length > 500) errors.push('Comment must be 500 characters or less')
+        if(comment.length > 500 || comment.length < 5) errors.push('Comment must be between 5 and 500 characters')
 
         setValidationErrors(errors)
     }, [comment])
