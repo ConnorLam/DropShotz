@@ -11,12 +11,12 @@ import CommentForm from "../../Comment/CreateComment/CreateComment";
 import { likeVideo } from "../../../store/video";
 
 
-const Video = ({video, commentsList}) => {
+const Video = ({video, commentsList, isLoaded, setIsLoaded}) => {
     // console.log(video.comments)
     // const [users, setUsers] = useState([]);
     // console.log(users)
     const sessionUser = useSelector(state => state.session.user)
-    const [isLoaded, setIsLoaded] = useState(true)
+    // const [isLoaded, setIsLoaded] = useState(true)
 
     // useEffect(() => {
     // async function fetchData() {

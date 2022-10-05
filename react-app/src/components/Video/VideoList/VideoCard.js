@@ -21,7 +21,7 @@ function VideoCard({video}){
       postTimer = <>{days} days ago</>;
     }
 
-    console.log(video.user)
+    // console.log(video.user)
 
     return (
         <div className="each-video">
