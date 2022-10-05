@@ -35,7 +35,7 @@ function User() {
   }
 
   if (!user) {
-    console.log("hi");
+    // console.log("hi");
     return (
       <div>
         404 not found
@@ -46,7 +46,7 @@ function User() {
   if(!user.videos){
     return null
   }
-  console.log(user)
+  // console.log(user)
   
 
   return isLoaded && (
