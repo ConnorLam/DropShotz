@@ -83,6 +83,7 @@
 .video-description{
     margin-left: 46px;
     font-size: 14px;
+    overflow-wrap: break-word;
 }
 
 .edit-delete>button{
