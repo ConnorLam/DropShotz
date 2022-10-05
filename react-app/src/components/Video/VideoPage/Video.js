@@ -8,43 +8,23 @@ import EditCommentModal from "../../Comment/UpdateComment/EditCommentModal";
 import DeleteCommentModal from "../../Comment/DeleteComment/DeleteCommentModal";
 
 import CommentForm from "../../Comment/CreateComment/CreateComment";
-import { likeVideo } from "../../../store/video";
+import { createLikeThunk, deleteLikeThunk } from "../../../store/like";
 
 
-const Video = ({video, commentsList, isLoaded, setIsLoaded}) => {
+
+const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
     // console.log(video.comments)
     // const [users, setUsers] = useState([]);
     // console.log(users)
     const sessionUser = useSelector(state => state.session.user)
     // const [isLoaded, setIsLoaded] = useState(true)
-
-    // useEffect(() => {
-    // async function fetchData() {
-    //     const response = await fetch("/api/users/");
-    //     const responseData = await response.json();
-    //     setUsers(responseData.users);
+    // if(sessionUser.id )
+    // const handleClick = async e => {
+    //     // e.preventDefault()
+    //     // if (sessionUser.id)
     // }
-    // fetchData();
-    // }, []);
-    // console.log(video.timeCreated.split(' ').slice(1, 4).join(' '))
-    if (isLoaded){
 
-        const datePosted = new Date(video.timeCreated);
-        // console.log(typeof(datePosted));
-        const now = Date.now();
-        const milliseconds = Math.abs(now - datePosted);
-        const minutes = Math.ceil(milliseconds / (1000 * 60));
-        const hours = Math.ceil(milliseconds / (1000 * 60 * 60));
-        const days = Math.ceil(milliseconds / (1000 * 60 * 60 * 24));
-        let postTimer;
-        if (minutes < 60) {
-        postTimer = <>{minutes} minutes ago</>;
-        } else if (hours < 24) {
-        postTimer = <>{hours} hours ago</>;
-        } else {
-        postTimer = <>{days} days ago</>;
-        }
-    }
+
 
     if(!sessionUser){
         return isLoaded && (
@@ -100,18 +80,6 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded}) => {
                             <div className="comment">
                                 {comment.comment}
                             </div>
-                                {/* {
-                                    comment.userId === sessionUser.id ?
-                                    <div className="edit-delete-comment-button">
-                                        <div>
-                                            <EditCommentModal video={video} comment={comment}/>
-                                        </div>
-                                        <div className="delete-left-spacer">
-                                            <DeleteCommentModal video={video} comment={comment}/>
-                                        </div>
-                                    </div>
-                                    : null
-                                } */}
                         </div>
                     </div>
                 ))}
@@ -128,10 +96,10 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded}) => {
             <div className="section">
                 <div className="first-section">
                     <div className="page-title">{video.title}</div>
-                    {/* <div className="likes">
-                        <i class="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp;
-                        <div>{video.likes.length === 1 ? `${video.likes.length} like` : `${video.likes.length} likes` }</div>
-                    </div> */}
+                    <div className="likes">
+                        <i className="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp;
+                        <div>{likesList.length === 1 ? `${likesList.length} like` : `${likesList.length} likes` }</div>
+                    </div>
                 </div>
                 <div className="timer-edit-delete">
                     <div className="page-timer">{video.timeCreated.split(' ').slice(1, 4).join(' ')}</div>

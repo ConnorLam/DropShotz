@@ -31,6 +31,18 @@ class Video(db.Model):
             "likes": [like.to_dict() for like in self.likes]
         }
 
+    def no_likes_to_dict(self):
+        return {
+            "id": self.id,
+            "ownerId": self.owner_id,
+            "title" : self.title,
+            "video" : self.video,
+            "description" : self.description,
+            "timeCreated" : self.time_created,
+            "timeUpdated" : self.time_updated,
+            "user" : self.user.to_dict(),
+        }
+
     def no_user_to_dict(self):
         return {
             "id": self.id,

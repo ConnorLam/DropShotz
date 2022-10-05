@@ -44,7 +44,7 @@ def get_video_by_id(id):
     if not video:
         return {"message": "Video could not be found", "statusCode": 404}, 404
 
-    video_lst = video.to_dict()
+    video_lst = video.no_likes_to_dict()
     # comment_lst = [comment.to_dict() for comment in comments]
     # print('\n\n\n', comment_lst, '\n\n\n')
 
