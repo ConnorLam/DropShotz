@@ -25,7 +25,7 @@ const DeleteVideo = ({video, setShowModal, setIsLoaded}) => {
 
     return (
         <div className="delete-modal">
-            <h3>Are you sure you want to delete <span className="video-title">{video.title}</span>?</h3>
+            <h3 className="header-del-conf">Are you sure you want to delete <span className="video-title">{video.title}</span></h3>
             <div className="cancel-submit-button">
                 <button onClick={handleClick}>Cancel</button>
                 <button onClick={handleDelete}>Delete</button>

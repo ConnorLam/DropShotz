@@ -29,8 +29,14 @@ const SignUpForm = () => {
       validationErrors.push("Please submit a valid preview image");
     }
 
+    if (firstName.length > 25) validationErrors.push("Length of first name should be 25 characters or less")
+    if (lastName.length > 25) validationErrors.push("Length of last name should be 25 characters or less")
+    if (username.length > 25) validationErrors.push("Username should be 25 characters or less")
+    if (email.length > 40) validationErrors.push("Email should be 50 characters or less")
+
+
     setErrors(validationErrors);
-  }, [password, repeatPassword, profilePicture, username, email]);
+  }, [password, repeatPassword, profilePicture, username, email, firstName, lastName]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
