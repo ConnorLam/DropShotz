@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Blueprint, request
-from app.models import db, Video, Comment, User, Like
+from app.models import comment, db, Video, Comment, User, Like
 from flask_login import current_user, login_required
 from app.forms.comment_form import CommentForm
 
@@ -156,12 +156,14 @@ def post_comment_for_video(id):
 def post_like_for_video(id):
     video = Video.query.get(id)
     # print(video.likes)
+    likesLst = [like.to_dict()['userId'] for like in video.likes]
+    # print('\n\n\n', likesLst, '\n\n\n')
 
     if not video:
         return {"message": "Video could not be found", "statusCode": 404}, 404
 
-    # if current_user.id in video.likes:
-    #     return {"message": "User cannot like the same video", "statusCode": 401}, 401
+    if current_user.id in likesLst:
+        return {"message": "User cannot like the same video", "statusCode": 401}, 401
 
     like = Like(user_id = current_user.id, video_id = id)
     db.session.add(like)
@@ -173,10 +175,13 @@ def post_like_for_video(id):
 @login_required
 def delete_like_for_video(id):
     like = Like.query.get(id)
+    print('\n\n\n', like.to_dict()['userId'], '\n\n\n')
 
     if not like:
         return {"message": "Like could not be found", "statusCode": 404}, 404
         #?
+    if current_user.id != like.to_dict()['userId']:
+        return {"message": "User cannot take someones like away", "statusCode": 401}, 401
 
     db.session.delete(like)
     db.session.commit()
@@ -184,7 +189,15 @@ def delete_like_for_video(id):
         "message": "Successfully deleted",  "statusCode": 200
     }, 200
     
+@video_routes.route('/<int:id>/likes')
+@login_required
+def get_likes_for_video(id):
+    video = Video.query.get(id)
 
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+
+    return {'Likes': [like.to_dict() for like in video.likes]}
 
 
     
