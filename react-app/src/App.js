@@ -38,9 +38,9 @@ function App() {
       <div className='no-nav-bar'>
       <Footer leftBar={leftBar} setLeftBar={setLeftBar}/>
         <Switch>
-          <Route path={'/upload-video'} exact={true}>
+          <ProtectedRoute path={'/upload-video'} exact={true}>
             <UploadVideo />
-          </Route>
+          </ProtectedRoute>
           {/* <Route path={'/videos'} exact={true}>
             <AllVids />
           </Route> */}
@@ -53,9 +53,9 @@ function App() {
           <Route path='/sign-up' exact={true}>
             <SignUpForm />
           </Route>
-          <ProtectedRoute path='/users' exact={true} >
+          {/* <ProtectedRoute path='/users' exact={true} >
             <UsersList/>
-          </ProtectedRoute>
+          </ProtectedRoute> */}
           <Route path='/users/:userId' exact={true} >
             <User />
           </Route>
