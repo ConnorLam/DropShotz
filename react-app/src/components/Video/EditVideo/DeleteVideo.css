@@ -19,3 +19,15 @@
     text-decoration-thickness: 3px;
     text-decoration-line: underline;
 }
+
+.header-del-conf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* color: #686868; */
+    /* width: 100%; */
+}
+
+/* .questionmark{
+    text-decoration: none;
+} */

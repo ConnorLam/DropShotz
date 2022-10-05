@@ -38,7 +38,7 @@ function VideoCard({video}){
                             <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
                         </NavLink>
                     </div>
-                    <div>
+                    <div className="video-title-list">
                         {video.title}
                     </div>
                 </div>

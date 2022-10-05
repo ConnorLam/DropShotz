@@ -28,6 +28,16 @@
     transition: .5s;
 }
 
+.video-title-list{
+    overflow-wrap: break-word;
+    width: 85%;
+    /* padding-right: 60px; */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .each-video:hover{
     background-color: rgb(235, 232, 232);
     border-bottom-left-radius: 10px;
