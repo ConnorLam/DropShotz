@@ -108,6 +108,24 @@ export const deleteVidThunk = (videoId) => async dispatch => {
     return data
 }
 
+// export const likeVideo = (userId, videoId) => async dispatch => {
+//     const res = await fetch(`/api/videos/${videoId}/like`, 
+//         {
+//             method: 'POST',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//                 userId,
+//                 videoId
+//             })
+//         }
+//     )
+//     const data = await res.json()
+// }
+
+// export const removeLike = (likeId) => async dispatch => {
+//     const res = await fetch(`/api/videos/like/${likeId}`)
+// }
+
 
 const initialState = {}
 

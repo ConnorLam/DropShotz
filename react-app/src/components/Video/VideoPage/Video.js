@@ -8,6 +8,7 @@ import EditCommentModal from "../../Comment/UpdateComment/EditCommentModal";
 import DeleteCommentModal from "../../Comment/DeleteComment/DeleteCommentModal";
 
 import CommentForm from "../../Comment/CreateComment/CreateComment";
+import { likeVideo } from "../../../store/video";
 
 
 const Video = ({video, commentsList}) => {
@@ -127,7 +128,8 @@ const Video = ({video, commentsList}) => {
             <div className="section">
                 <div className="first-section">
                     <div className="page-title">{video.title}</div>
-                    {/* <div>
+                    {/* <div className="likes">
+                        <i class="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp;
                         <div>{video.likes.length === 1 ? `${video.likes.length} like` : `${video.likes.length} likes` }</div>
                     </div> */}
                 </div>

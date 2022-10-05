@@ -155,9 +155,13 @@ def post_comment_for_video(id):
 @login_required
 def post_like_for_video(id):
     video = Video.query.get(id)
+    # print(video.likes)
 
     if not video:
         return {"message": "Video could not be found", "statusCode": 404}, 404
+
+    # if current_user.id in video.likes:
+    #     return {"message": "User cannot like the same video", "statusCode": 401}, 401
 
     like = Like(user_id = current_user.id, video_id = id)
     db.session.add(like)
