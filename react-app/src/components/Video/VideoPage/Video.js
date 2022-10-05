@@ -125,7 +125,12 @@ const Video = ({video, commentsList}) => {
                 <video className="video-on-page" title={video.title} src={video.video} type='video/mp4' controls/>
             </div>
             <div className="section">
-                <div className="page-title">{video.title}</div>
+                <div className="first-section">
+                    <div className="page-title">{video.title}</div>
+                    {/* <div>
+                        <div>{video.likes.length === 1 ? `${video.likes.length} like` : `${video.likes.length} likes` }</div>
+                    </div> */}
+                </div>
                 <div className="timer-edit-delete">
                     <div className="page-timer">{video.timeCreated.split(' ').slice(1, 4).join(' ')}</div>
                     <div>{video.ownerId === sessionUser.id  ? <div className="edit-delete"> <EditVideoModal video={video}/> <DeleteVideoModal video={video} setIsLoaded={setIsLoaded} /> </div>: null}</div>

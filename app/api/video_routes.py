@@ -154,7 +154,11 @@ def post_comment_for_video(id):
 @video_routes.route('/<int:id>/like', methods=["POST"])
 @login_required
 def post_like_for_video(id):
-    Video.query.get(id)
+    video = Video.query.get(id)
+
+    if not video:
+        return {"message": "Video could not be found", "statusCode": 404}, 404
+
     like = Like(user_id = current_user.id, video_id = id)
     db.session.add(like)
     db.session.commit()
@@ -165,6 +169,11 @@ def post_like_for_video(id):
 @login_required
 def delete_like_for_video(id):
     like = Like.query.get(id)
+
+    if not like:
+        return {"message": "Like could not be found", "statusCode": 404}, 404
+        #?
+
     db.session.delete(like)
     db.session.commit()
     return {
