@@ -12,12 +12,15 @@
     /* border: solid 1px black; */
     width: 700px;
     padding: 30px;
+    background-color: white;
 }
 
 .outer-create-page-div{
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: #F9F9F9;
+    height: 100vh;
     /* margin-bottom: 100px; */
 }
 
