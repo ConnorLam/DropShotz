@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { createCommentThunk } from "../../../store/comments";
 import EditCommentModal from "../UpdateComment/EditCommentModal";
 
@@ -12,6 +13,7 @@ const CommentForm = ({video}) => {
     const sessionUser = useSelector((state) => state.session.user);
     const [validationErrors, setValidationErrors] = useState([])
     const [hasSubmitted, setHasSubmitted] = useState(false)
+    const history = useHistory()
 
     useEffect(() => {
         const errors = []
@@ -36,13 +38,20 @@ const CommentForm = ({video}) => {
         
         const data = await dispatch(createCommentThunk(payload))
         setComment('')
-
+        
         setHasSubmitted(false)
-
+        
         return
-
-
+        
+        
     }
+
+    // const handleClick = () => {
+    //     if (!sessionUser) {
+    //       return alert("Must be signed up to write a comment");
+    //     }
+
+    // }
 
     return (
         <div className="comment-form-page">
