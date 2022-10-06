@@ -48,8 +48,17 @@
 .video-file{
     border: none;
     margin-top: 30px;
-    padding-left: 0px;
+    padding-left: 3px;
     color: grey;
+    padding-bottom: 0px;
+}
+
+.mp4-pls{
+    /* margin-top: 30px; */
+    color: red;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-left: 5px;
 }
 
 /* .video-file>button{

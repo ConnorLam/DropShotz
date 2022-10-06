@@ -73,6 +73,7 @@ const UploadVideo = () => {
             <div className="whole-create-vid-page">
                 <div>
                     <h3>Post your best badminton clips here!</h3>
+                    {/* <p>mp4 clips only please</p> */}
                 </div>
                 {submitted && validationErrors.map(((error, i) => <div className='errors' key={i}><li>{error}</li></div>))}
                 <form onSubmit={handleSubmit}>
@@ -110,6 +111,7 @@ const UploadVideo = () => {
                             accept="video/mp4"
                             onChange={updateVideo}
                         />
+                        <div className="mp4-pls">Mp4 videos only please</div>
                     </div>
                     <div className="submit-video-button">
                         <button type="submit">Submit</button>
