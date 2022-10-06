@@ -137,7 +137,7 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
                     <div className="page-title">{video.title}</div>
                     <div className="likes">
                         <i onClick={() => likeOrDislike()} className="fa-solid fa-thumbs-up like-button" id={likesId.includes(sessionUser.id) ? 'is-liked' : 'not-liked'}></i>&nbsp;&nbsp;
-                        <div>{likesList.length === 1 ? `${likesList.length} like` : `${likesList.length} likes` }</div>
+                        <div id={likesList.length === 1 ? 'one-like' : 'many-likes'}>{likesList.length === 1 ? `${likesList.length} like` : `${likesList.length} likes` }</div>
                     </div>
                 </div>
                 <div className="timer-edit-delete">
