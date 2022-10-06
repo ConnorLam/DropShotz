@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import EditVideoModal from "../EditVideo/EditVideoModal";
 import DeleteVideoModal from "../EditVideo/DeleteVideoModal";
 import './index.css'
@@ -16,7 +16,11 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
     // console.log(video.comments)
     // const [users, setUsers] = useState([]);
     // console.log(users)
+    const dispatch = useDispatch()
+    const history = useHistory()
+
     const sessionUser = useSelector(state => state.session.user)
+
     // const [isLoaded, setIsLoaded] = useState(true)
     // if(sessionUser.id ){
 
@@ -26,6 +30,25 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
         return like.userId
         // gets the user id of each like so we can see if user already has a like
     })
+
+    // console.log(likesId.includes(sessionUser.id))
+    // console.log(likesList[likesId.indexOf(sessionUser.id)].id)
+
+    const likeOrDislike = async () => {
+
+        if(!sessionUser){
+            alert('Must be logged in to like a post')
+            return history.push('/login')
+        }
+
+        if(likesId.includes(sessionUser.id)){
+            await dispatch(deleteLikeThunk(likesList[likesId.indexOf(sessionUser.id)].id))
+        }
+        else{
+            const payload = {videoId: video.id, userId: sessionUser.id}
+            await dispatch(createLikeThunk(payload))
+        }
+    }
 
     
 
@@ -43,7 +66,13 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
                 <video className="video-on-page" title={video.title} src={video.video} type='video/mp4' controls/>
             </div>
             <div className="section">
-                <div className="page-title">{video.title}</div>
+                <div className="first-section">
+                    <div className="page-title">{video.title}</div>
+                    <div className="likes">
+                        <i onClick={() => likeOrDislike()} className="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp;
+                        <div>{likesList.length === 1 ? `${likesList.length} like` : `${likesList.length} likes` }</div>
+                    </div>
+                </div>
                 <div className="timer-edit-delete">
                     <div className="page-timer">{video.timeCreated.split(' ').slice(1, 4).join(' ')}</div>
                 </div>
@@ -107,7 +136,7 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
                 <div className="first-section">
                     <div className="page-title">{video.title}</div>
                     <div className="likes">
-                        <i className="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp;
+                        <i onClick={() => likeOrDislike()} className="fa-solid fa-thumbs-up like-button" id={likesId.includes(sessionUser.id) ? 'is-liked' : 'not-liked'}></i>&nbsp;&nbsp;
                         <div>{likesList.length === 1 ? `${likesList.length} like` : `${likesList.length} likes` }</div>
                     </div>
                 </div>

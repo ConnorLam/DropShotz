@@ -34,11 +34,13 @@ export const getVidLikeThunk = (videoId) => async dispatch => {
     return data
 }
 
-export const createLikeThunk = ({videoId, like}) => async dispatch => {
+export const createLikeThunk = ({videoId, userId}) => async dispatch => {
     const res = await fetch(`/api/videos/${videoId}/like`, {
         method: 'POST',
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify(like)
+        // headers: {"Content-type": "application/json"},
+        // body: JSON.stringify()
+        videoId,
+        userId
     })
 
     const data = await res.json()

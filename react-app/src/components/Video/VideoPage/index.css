@@ -152,7 +152,16 @@
     font-size: large;
 }
 
-.like-button{
-    /* color: blue; */
+#is-liked{
+    color: blue;
     /* margin-right: 10px; */
 }
+
+.like-button{
+    cursor: pointer;
+}
+
+#not-liked{
+
+}
+
