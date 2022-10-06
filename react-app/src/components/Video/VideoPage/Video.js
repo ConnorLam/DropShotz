@@ -94,9 +94,9 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
                     {video.description}
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <CommentForm video={video}/>
-            </div>
+            </div> */}
             <div>
                 <div>
                     <div className="comment-count">{commentsList.length === 1 ? `${commentsList.length} Comment` : `${commentsList.length} Comments`} </div>
