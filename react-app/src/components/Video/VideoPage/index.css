@@ -150,6 +150,7 @@
     display: flex;
     flex-direction: row;
     font-size: large;
+    /* transition: .5s; */
 }
 
 #is-liked{
@@ -157,11 +158,15 @@
     /* margin-right: 10px; */
 }
 
+#is-liked:hover{
+    color: rgb(92, 92, 246);
+}
+
 .like-button{
     cursor: pointer;
 }
 
-#not-liked{
-
+#not-liked:hover{
+    color: rgb(92, 92, 246);
 }
 
