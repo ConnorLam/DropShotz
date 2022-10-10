@@ -33,6 +33,7 @@ const SignUpForm = () => {
     if (lastName.length > 25) validationErrors.push("Length of last name should be 25 characters or less")
     if (username.length > 25) validationErrors.push("Username should be 25 characters or less")
     if (email.length > 40) validationErrors.push("Email should be 50 characters or less")
+    if (password.length < 5) validationErrors.push('Password length should be at least 5 characters')
 
 
     setErrors(validationErrors);
