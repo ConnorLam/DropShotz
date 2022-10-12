@@ -190,7 +190,7 @@ def delete_like_for_video(id):
     }, 200
     
 @video_routes.route('/<int:id>/likes')
-@login_required
+# @login_required
 def get_likes_for_video(id):
     video = Video.query.get(id)
 
