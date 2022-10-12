@@ -152,9 +152,26 @@
     display: flex;
     flex-direction: row;
     font-size: large;
+    /* transition: .5s; */
+}
+
+#is-liked{
+    color: blue;
+    /* margin-right: 10px; */
+}
+
+#is-liked:hover{
+    color: rgb(92, 92, 246);
 }
 
 .like-button{
-    /* color: blue; */
-    /* margin-right: 10px; */
+    cursor: pointer;
+}
+
+#not-liked:hover{
+    color: rgb(92, 92, 246);
+}
+
+#one-like{
+    padding-right: 10px;
 }
