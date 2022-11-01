@@ -10,6 +10,8 @@ const UploadVideo = () => {
     const [description, setDescription] = useState('')
     const [videoLoading, setVideoLoading] = useState(false);
 
+
+    
     const [validationErrors, setValidationErrors] = useState([])
     const [submitted, setIsSubmitted] = useState(false)
 
@@ -17,6 +19,7 @@ const UploadVideo = () => {
         const errors = []
 
         if(!video) errors.push('Please provide a video')
+        if(video?.size > 20 * 1000 * 1000) errors.push('Video size too large, only 20 mb or smaller please.')
         if(!title) errors.push('Please provide a title')
         if(title.length > 40) errors.push("Title must be 40 characters or less")
         if(!description) errors.push('Please provide a description')

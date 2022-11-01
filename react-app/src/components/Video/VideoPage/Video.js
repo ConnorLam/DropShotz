@@ -69,7 +69,7 @@ const Video = ({video, commentsList, isLoaded, setIsLoaded, likesList}) => {
                 <div className="first-section">
                     <div className="page-title">{video.title}</div>
                     <div className="likes">
-                        <i onClick={() => likeOrDislike()} className="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp;
+                        {/* <i onClick={() => likeOrDislike()} className="fa-solid fa-thumbs-up like-button"></i>&nbsp;&nbsp; */}
                         <div>{likesList.length === 1 ? `${likesList.length} like` : `${likesList.length} likes` }</div>
                     </div>
                 </div>

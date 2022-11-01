@@ -1,3 +1,4 @@
+import email
 import profile
 from app.models import db, User
 
@@ -74,6 +75,9 @@ def seed_users():
     tYang = User(
         first_name='Tiffany', last_name='Yang', username='tYang', email='tyang@aa.io', password='password'
     )
+    bwf = User(
+        first_name='Badminton World', last_name='Federation', username='BWF', email='bwf@aa.io', password='password', profile_picture='https://yt3.ggpht.com/ytc/AMLnZu_BqDMyp9oOvKH4HTGqQoTOrykvLOaQlP3Q9nizjA=s900-c-k-c0x00ffffff-no-rj'
+    )
 
     db.session.add(demo)
     db.session.add(connor)
@@ -101,6 +105,7 @@ def seed_users():
     db.session.add(rHenry)
     db.session.add(rNguyen)
     db.session.add(tYang)
+    db.session.add(bwf)
 
     db.session.commit()
 

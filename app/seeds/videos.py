@@ -66,7 +66,67 @@ def seed_videos():
             "title" : "usa vs japan 6/7",
             "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/9c525129469e4961b20fcaa8d4d638ad.mp4",
             "description" : "My friends at canada open"
-        }
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | What vision from Thom Gicquel to save this point!",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/ea4ff8ce7f56484abdffda870e58b027.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Viktor Axelsen's persistence eventually pays off against Kodai Naraoka",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/fcaaa764e05b4e3e9c45894f6f513ef6.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Rasmus Gemke with an unbelievable shot! Have a look at this",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/04f784c1f5b54534ac8601f14ba821db.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Feng/Huang taking control in this remarkable rally to save match point",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/1ad9bc360cb440ea82623116f3b75e7f.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Yuta Watanabe saves the match with a stroke of genius!",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/1ad9bc360cb440ea82623116f3b75e7f.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | A 40-shot masterclass from Viktor Axelsen and Anthony Sinisuka Ginting",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/686abf0690514936b359d4a767bdf88e.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Loh Kean Yew steps it up a gear to close out in six straight points",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/c46654a2b526497397aa2f7846452d19.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Whet your appetite for action with this absolute stunner",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/5f6909ca192a4e568845befc0ae20e54.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Lee/Wang masterfully craft this point against Boon/Wong",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/54929d65bb2646fcbbe23a0bd5104f3d.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Fajar Alfian takes flight and stuns Chia/Soh with this magnificent drop shot",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/5a354d41b14944c5a9d666f3329dde6e.mp4",
+            "description": "BWF play of the day!!"
+        },
     ]
         # {
         #     "owner_id" : 2,
