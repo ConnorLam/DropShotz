@@ -66,7 +66,67 @@ def seed_videos():
             "title" : "usa vs japan 6/7",
             "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/9c525129469e4961b20fcaa8d4d638ad.mp4",
             "description" : "My friends at canada open"
-        }
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | What vision from Thom Gicquel to save this point!",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/ea4ff8ce7f56484abdffda870e58b027.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Viktor Axelsen's persistence eventually pays off against Kodai Naraoka",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/fcaaa764e05b4e3e9c45894f6f513ef6.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Rasmus Gemke with an unbelievable shot! Have a look at this",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/04f784c1f5b54534ac8601f14ba821db.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "HSBC Play of the Day | Feng/Huang taking control in this remarkable rally to save match point",
+            "video" : "https://connorlam-dropshotz-bucket.s3.us-west-1.amazonaws.com/1ad9bc360cb440ea82623116f3b75e7f.mp4",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "",
+            "video" : "",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "",
+            "video" : "",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "",
+            "video" : "",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "",
+            "video" : "",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "",
+            "video" : "",
+            "description": "BWF play of the day!!"
+        },
+        {
+            "owner_id" : 26,
+            "title" : "",
+            "video" : "",
+            "description": "BWF play of the day!!"
+        },
     ]
         # {
         #     "owner_id" : 2,
