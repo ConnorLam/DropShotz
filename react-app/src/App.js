@@ -13,6 +13,7 @@ import AllVids from './components/Video/VideoList';
 import VideoPage from './components/Video/VideoPage';
 import Footer from './components/footer/footer';
 import NotFound from './components/NotFound/NotFound';
+import About from './components/About';
 // import UserVidsList from './components/Video/UserVideos/UserVidsList';
 import './index.css'
 
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route path='/sign-up' exact={true}>
             <SignUpForm />
+          </Route>
+          <Route path={'/about'} exact={true}>
+            <About />
           </Route>
           {/* <ProtectedRoute path='/users' exact={true} >
             <UsersList/>
