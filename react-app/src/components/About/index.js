@@ -12,7 +12,7 @@ const About = () => {
                 </div>
                 {/* change font color? */}
                 <div id="bio">
-                    Hi I'm Connor and welcome to DropShotz! This project was created by my co-developers and I, and was intented to be a clone of Yelp. Besides my love for coding, I'm an avid lover of badminton and also enjoy playing video games with friends. If you would like to connect with me or checkout my other projects please check the links below.
+                    Hi I'm Connor and welcome to DropShotz! This project was created by me as my final project at App Academy. DropShotz was inspired by YouTube. Besides my love for coding, I'm an avid lover of badminton and also enjoy playing video games with friends. If you would like to connect with me or checkout my other projects please check the links below.
                 </div>
                 <div>
                     <div id="connect">Connect:</div>
