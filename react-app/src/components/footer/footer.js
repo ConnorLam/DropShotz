@@ -30,6 +30,13 @@ const Footer = ({leftBar, setLeftBar}) => {
                         </NavLink>
                     </div> */}
                     <div className='site-content'>
+                        <NavLink className='navlink' to={'/about'}>
+                            <div className='left-side-box'>
+                                {/* <i className="fa-regular fa-user logo"></i> */}
+                                <i class="fa-solid fa-hand icon"></i>
+                            About DropShotz
+                            </div>
+                        </NavLink>
                         <a className='navlink' href='https://www.linkedin.com/in/connor-lam-a6545a23b/' target="_blank" rel="noreferrer noopener">
                             <div className='left-side-box'>
                                 {/* <i className="fa-regular fa-user logo"></i> */}
@@ -45,15 +52,9 @@ const Footer = ({leftBar, setLeftBar}) => {
                             </div>
                         </a>
                     </div>
-                    <div className='site-content'>
-                        <div>
-
-                        </div>
+                    <div className='site-content-2'>
 
                     </div>
-                </div>
-                <div>
-                    <p className='intro'>DropShotz, a badminton highlights YouTube clone made by Connor Lam</p>
                 </div>
             </div>
         </footer>
