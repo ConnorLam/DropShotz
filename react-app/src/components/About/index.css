@@ -1,0 +1,158 @@
+/* @font-face {
+    font-family: 'gothicA1-semibold';
+    src: url('../../fonts/gothicA1/GothicA1-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Kodchasan-Light';
+    src: url('../../fonts/Kodchasan/Kodchasan-Light.ttf');
+} */
+
+
+#about-exterior-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Kodchasan-Light';
+    margin-bottom: 20px;
+}
+
+#about-interior-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#developer-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#developer-name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    margin: 10px;
+}
+
+#profile-picture-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#developer-profile-picture {
+    width: 90%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+}
+
+#individual-developer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 10px;
+    width: 28em;
+}
+
+#developer-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#developer-socials>* {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    background-color: rgb(50, 50, 50);
+    padding: 5px;
+    width: 25%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+#developer-socials>*:hover {
+    transform: scale(1.08);
+}
+
+#projects-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+#bio {
+    padding: 0px 20px;
+    margin: 10px 0px;
+    height: 8em;
+    color: rgb(129, 127, 127);
+}
+
+#connect {
+    padding: 0px 20px;
+    margin-top: 10px;
+    margin-bottom: -8px;
+}
+
+#projects {
+    padding: 0px 20px;
+    margin: 10px 0px;
+}
+
+#individual-project {
+    transition: all .2s ease-in-out;
+}
+
+#individual-project:hover {
+    transform: scale(1.08);
+    /* animation: tilt-shaking 0.2s ; */
+}
+
+.about-logo {
+    color: white;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+#about-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #F9F9F9;
+}
+
+/* .fa-brands:hover{
+    transform: scale(1.1);
+} */
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0eg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
