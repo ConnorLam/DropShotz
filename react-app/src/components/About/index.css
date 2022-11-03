@@ -124,9 +124,11 @@
     transition: all .2s ease-in-out;
 }
 
-#about-wrapper{
+#about-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: #F9F9F9;
 }
