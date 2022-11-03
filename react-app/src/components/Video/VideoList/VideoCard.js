@@ -30,7 +30,7 @@ function VideoCard({video}){
                     <h3>{video.title}</h3>
                 </div> */}
                 <div className="video">
-                    <video width='300' height='200' src={video.video} type='video/mp4' />
+                    <video src={video.video} type='video/mp4' />
                 </div>
                 <div className="title">
                     <div className="prof-pic-div">
