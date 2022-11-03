@@ -127,10 +127,11 @@
 #about-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     background-color: #F9F9F9;
+    height: 100vh;
 }
 
 /* .fa-brands:hover{

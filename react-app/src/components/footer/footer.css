@@ -79,3 +79,9 @@ footer{
     padding-right: 5px;
     color: rgb(48, 48, 48);
 }
+
+@media only screen and (max-width: 1023px) {
+    .left-side{
+        padding-left: 3rem;
+    }
+}

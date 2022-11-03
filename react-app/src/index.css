@@ -103,3 +103,10 @@ textarea {
     width: 100%;
     justify-content: center;
 }
+
+@media only screen and (max-width: 1023px){
+    .no-nav-bar{
+        margin: 0px;
+        width: 100%;
+    }
+}
