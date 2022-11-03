@@ -32,25 +32,27 @@ function VideoCard({video}){
                 <div className="video">
                     <video src={video.video} type='video/mp4' />
                 </div>
-                <div className="title">
-                    <div className="prof-pic-div">
-                        <NavLink to={`/users/${video.ownerId}`}>
-                            <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
-                        </NavLink>
-                    </div>
-                    <div className="video-title-list">
-                        {video.title}
-                    </div>
-                </div>
-                <div className="second-row">
-                        <div className="username">
-                            <NavLink className='navlink username-nav go-to-user' to={`/users/${video.ownerId}`}>
-                                <span className="go-to-user">{video.user.username}</span>
+                <div className="no-video">
+                    <div className="title">
+                        <div className="prof-pic-div">
+                            <NavLink to={`/users/${video.ownerId}`}>
+                                <img className="profile-image-video-list" src={video.user.profilePicture} alt=''/>
                             </NavLink>
                         </div>
-                </div>
-                <div className="timer">
-                    {postTimer}
+                        <div className="video-title-list">
+                            {video.title}
+                        </div>
+                    </div>
+                    <div className="second-row">
+                            <div className="username">
+                                <NavLink className='navlink username-nav go-to-user' to={`/users/${video.ownerId}`}>
+                                    <span className="go-to-user">{video.user.username}</span>
+                                </NavLink>
+                            </div>
+                    </div>
+                    <div className="timer">
+                        {postTimer}
+                    </div>
                 </div>
             </NavLink>
         </div>

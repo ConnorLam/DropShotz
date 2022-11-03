@@ -36,6 +36,7 @@
     font-size: large;
     font-weight: bold;
     margin: 10px 0px;
+    width: 90%;
 }
 
 .timer-edit-delete{
@@ -82,7 +83,7 @@
 }
 
 .video-description{
-    margin-left: 46px;
+    margin-left: 47px;
     font-size: 14px;
     overflow-wrap: break-word;
 }
@@ -152,6 +153,7 @@
     display: flex;
     flex-direction: row;
     font-size: large;
+    /* width: 10%; */
     /* transition: .5s; */
 }
 

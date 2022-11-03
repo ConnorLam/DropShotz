@@ -15,4 +15,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+}
+
+.sad-face{
+    /* color: rgb(96, 96, 96); */
 }
