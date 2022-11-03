@@ -2,6 +2,7 @@
     height: 5rem;
     /* border: none;
     border-bottom: 1px solid black; */
+    font-size: xx-small;
     background-color: #F9F9F9;
 }
 
@@ -32,6 +33,10 @@
 
 @media only screen and (max-width: 1023px) {
     .create-comm-textarea{
-        font-size: 12px;
+        font-size: xx-small;
+    }
+    textarea,
+    textarea::placeholder{
+        font-size: xx-small;
     }
 }
