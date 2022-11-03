@@ -91,6 +91,18 @@ button:hover {
     font-size: 15px;
 }
 
+@media only screen and (max-width: 1023px){
+    .each-video{
+        width: 500px;
+        /* height: 10%; */
+        /* height: ; */
+    }
+    video{
+        width: 100%;
+        height: 200px;
+    }
+}
+
 /* .page-title{
     display: -webkit-box;
     -webkit-line-clamp: 2;
