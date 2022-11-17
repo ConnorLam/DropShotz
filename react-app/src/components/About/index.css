@@ -131,7 +131,8 @@
     align-items: center;
     width: 100%;
     background-color: #F9F9F9;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 }
 
 /* .fa-brands:hover{
